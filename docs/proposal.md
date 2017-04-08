@@ -21,11 +21,16 @@ We going to simulate water in the Cornell Box. Once it is done, it can be applie
 2. What results we are going for:
 
    i. Caustics Effect : 
-![alt text](images/caustics_example.png)
+
+![alt text](images/caustics_example.jpg)
+
    ii. Water Simulation : 
-![alt text](images/water_example.png)
+
+![alt text](images/water_example.jpg)
+
    iii. Integrated with Ray-Tracer : 
-![alt text](images/ray_trace.png)
+
+![alt text](images/ray_trace.jpg)
 
 3. Performance: Since it is a project based on real ray-tracing, we don’t expect it will be able to render the animation instantly. The goal is to render a single frame in .5 hr, or, a short demo animation in 2-3s with 60fps in acceptable amount of time (~24 hrs).
 
