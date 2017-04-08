@@ -19,6 +19,7 @@ We going to simulate water in the Cornell Box. Once it is done, it can be applie
 1. What we are trying to accomplish: A realistic 3D water simulation program based on the Ray-tracer project.
 
 2. What results we are going for:
+
    i. Caustics Effect : 
 ![alt text](images/caustics_example.png)
    ii. Water Simulation : 
