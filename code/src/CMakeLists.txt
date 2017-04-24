@@ -1,12 +1,21 @@
-# Original file Copyright CMU462 Fall 2015:
-# Kayvon Fatahalian, Keenan Crane,
-# Sky Gao, Bryce Summers, Michael Choquette.
 cmake_minimum_required(VERSION 2.8)
 
 # Application source
 set(APPLICATION_SOURCE
 
-    main.cpp SolidSphere.cpp Particles.cpp Particles.h)
+    # Collision objects
+    collision/sphere.cpp
+    collision/plane.cpp
+
+    fluid.cpp
+
+    # Application
+    simulator.cpp
+    main.cpp
+
+    # Camera
+    camera.cpp
+)
 
 #-------------------------------------------------------------------------------
 # Set include directories
@@ -15,7 +24,7 @@ include_directories(
   ${GLEW_INCLUDE_DIRS}
   ${GLFW_INCLUDE_DIRS}
   ${CGL_INCLUDE_DIRS}
-#  ${FREETYPE_INCLUDE_DIRS}
+  ${FREETYPE_INCLUDE_DIRS}
 )
 
 #-------------------------------------------------------------------------------
@@ -24,16 +33,16 @@ include_directories(
 link_directories(
   ${GLEW_LIBRARY_DIRS}
   ${GLFW_LIBRARY_DIRS}
-#  ${CGL_LIBRARY_DIRS}
-#  ${FREETYPE_LIBRARY_DIRS}
+  ${CGL_LIBRARY_DIRS}
+  ${FREETYPE_LIBRARY_DIRS}
 )
 
 #-------------------------------------------------------------------------------
 # Add executable
 #-------------------------------------------------------------------------------
-add_executable(sim ${APPLICATION_SOURCE})
+add_executable(fluid-simulator ${APPLICATION_SOURCE})
 
-target_link_libraries( sim
+target_link_libraries( fluid-simulator
     CGL ${CGL_LIBRARIES}
     glew ${GLEW_LIBRARIES}
     glfw ${GLFW_LIBRARIES}
@@ -46,7 +55,7 @@ target_link_libraries( sim
 # Platform-specific configurations for target
 #-------------------------------------------------------------------------------
 if(APPLE)
-  set_property( TARGET sim APPEND_STRING PROPERTY COMPILE_FLAGS
+  set_property( TARGET fluid-simulator APPEND_STRING PROPERTY COMPILE_FLAGS
                 "-Wno-deprecated-declarations -Wno-c++11-extensions")
 endif(APPLE)
 
@@ -54,4 +63,4 @@ endif(APPLE)
 set(EXECUTABLE_OUTPUT_PATH ..)
 
 # Install to project root
-install(TARGETS sim DESTINATION ${Fluid_SOURCE_DIR})
+install(TARGETS fluid-simulator DESTINATION ${FluidSimulator_SOURCE_DIR})

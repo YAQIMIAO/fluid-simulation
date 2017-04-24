@@ -157,56 +157,27 @@ endif(WIN32)
 #-------------------------------------------------------------------------------
 
 # Required packages
-find_package(OpenGL REQUIRED)
 find_package(Freetype REQUIRED)
 
-# Use pkg-config for GLEW & GLFW if available
-# find_package(PkgConfig QUIET)
 
-# GLEW
-# if(PKGCONFIG_FOUND)
-#   pkg_search_module(GLEW QUIET glew)
-# else(PKGCONFIG_FOUND)
-#   find_package(GLEW QUIET)
-# endif()
-# if(NOT GLEW_FOUND)
-#   add_subdirectory("${CGL_SOURCE_DIR}/deps/glew")
-#   set_property( TARGET glew APPEND_STRING PROPERTY COMPILE_FLAGS -w )
-# endif()
-
-# GLFW
-# if(PKGCONFIG_FOUND)
-#   pkg_search_module(GLFW QUIET glfw3)
-# else(PKGCONFIG_FOUND)
-#   find_package(GLFW QUIET)
-# endif()
-# if(NOT GLFW_FOUND)
-#   add_subdirectory("${CGL_SOURCE_DIR}/deps/glfw")
-#   set_property( TARGET glfw APPEND_STRING PROPERTY COMPILE_FLAGS -w )
-# endif()
-
-add_subdirectory("${CGL_SOURCE_DIR}/deps/glew")
-set_property( TARGET glew APPEND_STRING PROPERTY COMPILE_FLAGS -w )
-
-add_subdirectory("${CGL_SOURCE_DIR}/deps/glfw")
-set_property( TARGET glfw APPEND_STRING PROPERTY COMPILE_FLAGS -w )
+#-------------------------------------------------------------------------------
+# Set definitions
+#-------------------------------------------------------------------------------
+add_definitions(${NANOGUI_EXTRA_DEFS})
 
 #-------------------------------------------------------------------------------
 # Set include directories
 #-------------------------------------------------------------------------------
 include_directories(
   ${CGL_INCLUDE_DIRS}
-  ${GLEW_INCLUDE_DIRS}
-  ${GLFW_INCLUDE_DIRS}
   ${FREETYPE_INCLUDE_DIRS}
+  ${NANOGUI_EXTRA_INCS}
 )
 
 #-------------------------------------------------------------------------------
 # Set link directories
 #-------------------------------------------------------------------------------
 link_directories(
-  ${GLEW_LIBRARY_DIRS}
-  ${GLFW_LIBRARY_DIRS}
   ${FREETYPE_LIBRARY_DIRS}
 )
 

@@ -8,9 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/CGL.dir/complex.cpp.o"
   "CMakeFiles/CGL.dir/color.cpp.o"
   "CMakeFiles/CGL.dir/spectrum.cpp.o"
-  "CMakeFiles/CGL.dir/osdtext.cpp.o"
-  "CMakeFiles/CGL.dir/osdfont.c.o"
-  "CMakeFiles/CGL.dir/viewer.cpp.o"
   "CMakeFiles/CGL.dir/base64.cpp.o"
   "CMakeFiles/CGL.dir/lodepng.cpp.o"
   "CMakeFiles/CGL.dir/tinyxml2.cpp.o"
@@ -19,6 +16,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C CXX)
+foreach(lang CXX)
   include(CMakeFiles/CGL.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

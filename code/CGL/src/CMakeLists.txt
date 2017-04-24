@@ -13,9 +13,7 @@ set(CGL_SOURCE
     complex.cpp
     color.cpp
     spectrum.cpp
-    osdtext.cpp
-    osdfont.c
-    viewer.cpp
+    # viewer.cpp
     base64.cpp
     lodepng.cpp
     tinyxml2.cpp
@@ -28,9 +26,7 @@ add_library(CGL STATIC ${CGL_SOURCE})
 
 target_link_libraries(
   CGL
-  ${GLEW_LIBRARIES}
-  ${GLFW_LIBRARIES}
-  ${OPENGL_LIBRARIES}
+  nanogui ${NANOGUI_EXTRA_LIBS}
   ${FREETYPE_LIBRARIES}
 )
 
@@ -41,9 +37,7 @@ if(CGL_BUILD_SHARED)
   add_library(CGL_SHARED SHARED ${CGL_SOURCE})
   target_link_libraries(
     CGL_SHARED
-    ${GLEW_LIBRARIES}
-    ${GLFW_LIBRARIES}
-    ${OPENGL_LIBRARIES}
+    nanogui ${NANOGUI_EXTRA_LIBS}
     ${FREETYPE_LIBRARIES}
   )
 endif()
