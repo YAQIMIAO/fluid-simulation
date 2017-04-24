@@ -1,16 +1,18 @@
-// Code from:
+// class SolidSphere Code from:
 // http://stackoverflow.com/questions/5988686/creating-a-3d-sphere-in-opengl-using-visual-c
-
-
-
-
 #define _USE_MATH_DEFINES
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 #include <vector>
 #include <cmath>
+#include "CGL/CGL.h"
+#include "CGL/vector3D.h"
+#include "CGL/matrix3x3.h"
+#include "CGL/lodepng.h"
 
 // your framework of choice here
+
+using namespace CGL;
 
 class SolidSphere
 {
@@ -21,8 +23,12 @@ protected:
     std::vector<GLushort> indices;
 
 public:
-    SolidSphere(float radius, unsigned int rings, unsigned int sectors)
+    Vector3D position;
+
+
+    SolidSphere(Vector3D pos, float radius=0.2, unsigned int rings=24, unsigned int sectors=24)
     {
+        position = pos;
         float const R = 1./(float)(rings-1);
         float const S = 1./(float)(sectors-1);
         int r, s;
@@ -60,11 +66,11 @@ public:
         }
     }
 
-    void draw(GLfloat x, GLfloat y, GLfloat z)
+    void draw()
     {
         glMatrixMode(GL_MODELVIEW);
         glPushMatrix();
-        glTranslatef(x,y,z);
+        glTranslatef(position.x, position.y, position.z);
 
         glEnableClientState(GL_VERTEX_ARRAY);
         glEnableClientState(GL_NORMAL_ARRAY);
@@ -77,4 +83,5 @@ public:
         glPopMatrix();
     }
 };
+
 

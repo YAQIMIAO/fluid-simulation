@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 2.8)
 # Application source
 set(APPLICATION_SOURCE
 
-    main.cpp Particles.cpp Particles.h SolidSphere.cpp)
+    main.cpp SolidSphere.cpp)
 
 #-------------------------------------------------------------------------------
 # Set include directories
@@ -14,6 +14,7 @@ set(APPLICATION_SOURCE
 include_directories(
   ${GLEW_INCLUDE_DIRS}
   ${GLFW_INCLUDE_DIRS}
+  ${CGL_INCLUDE_DIRS}
 #  ${FREETYPE_INCLUDE_DIRS}
 )
 
@@ -33,10 +34,11 @@ link_directories(
 add_executable(sim ${APPLICATION_SOURCE})
 
 target_link_libraries( sim
+    CGL ${CGL_LIBRARIES}
     glew ${GLEW_LIBRARIES}
     glfw ${GLFW_LIBRARIES}
     ${OPENGL_LIBRARIES}
-#    ${FREETYPE_LIBRARIES}
+    ${FREETYPE_LIBRARIES}
     ${CMAKE_THREADS_INIT}
 )
 
@@ -45,7 +47,7 @@ target_link_libraries( sim
 #-------------------------------------------------------------------------------
 if(APPLE)
   set_property( TARGET sim APPEND_STRING PROPERTY COMPILE_FLAGS
-                "-Wno-deprecated-declaratiosimns -Wno-c++11-extensions")
+                "-Wno-deprecated-declarations -Wno-c++11-extensions")
 endif(APPLE)
 
 # Put executable in build directory root

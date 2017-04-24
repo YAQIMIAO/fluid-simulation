@@ -9,6 +9,7 @@ project(Fluid)
 #-------------------------------------------------------------------------------
 option(BUILD_DEBUG     "Build with debug settings"    OFF)
 option(BUILD_DOCS      "Build documentation"          OFF)
+option(BUILD_LIBCGL "Build with libCGL"         ON)
 
 #-------------------------------------------------------------------------------
 # Platform-specific settings
@@ -26,6 +27,7 @@ if(APPLE)
 
     if(BUILD_DEBUG)
       set(CMAKE_BUILD_TYPE Debug)
+      set(CLANG_CXX_FLAGS "${CLANG_CXX_FLAGS} -g")
     else(BUILD_DEBUG)
       set(CLANG_CXX_FLAGS "${CLANG_CXX_FLAGS} -O3")
       set(CLANG_CXX_FLAGS "${CLANG_CXX_FLAGS} -funroll-loops")
@@ -44,6 +46,7 @@ if(APPLE)
 
     if(BUILD_DEBUG)
       set(CMAKE_BUILD_TYPE Debug)
+      set(GCC_CXX_FLAGS "${GCC_CXX_FLAGS} -g")
     else(BUILD_DEBUG)
       set(GCC_CXX_FLAGS "${GCC_CXX_FLAGS} -O3")
       set(GCC_CXX_FLAGS "${GCC_CXX_FLAGS} -fopenmp")
@@ -71,6 +74,7 @@ if(LINUX)
         set(CMAKE_BUILD_TYPE Debug)
     else(BUILD_DEBUG)
         set(GCC_CXX_FLAGS "${GCC_CXX_FLAGS} -O3")
+        set(GCC_CXX_FLAGS "${GCC_CXX_FLAGS} -g")
         set(GCC_CXX_FLAGS "${GCC_CXX_FLAGS} -fopenmp")
     endif(BUILD_DEBUG)
 
@@ -122,16 +126,28 @@ find_package(OpenGL REQUIRED)
 find_package(Threads REQUIRED)
 find_package(Freetype REQUIRED)
 
+# CGL
+if(BUILD_LIBCGL)
+  add_subdirectory(CGL)
+  include_directories(CGL/include)
+else(BUILD_LIBCGL)
+  find_package(CGL REQUIRED)
+  find_package(GLEW REQUIRED)
+  find_package(GLFW REQUIRED)
+endif(BUILD_LIBCGL)
+
+
 # glfw
-add_subdirectory(glfw-3.2.1)
-include_directories(glfw-3.2.1/include)
+#add_subdirectory(glfw-3.2.1)
+#include_directories(glfw-3.2.1/include)
 
 # glew
-add_subdirectory(glew)
-include_directories(glew/include)
+#add_subdirectory(glew)
+#include_directories(glew/include)
 # set_property( TARGET glew APPEND_STRING PROPERTY COMPILE_FLAGS -w )
 
-include_directories(Eigen)
+#include_directories(Eigen)
+
 include_directories(glm)
 
 

@@ -10,12 +10,17 @@
 #include <time.h>
 #include <math.h>
 #include <cstring>
+#include "CGL/CGL.h"
+#include "CGL/vector3D.h"
+#include "CGL/matrix3x3.h"
+#include "CGL/lodepng.h"
+#include <glm/glm.hpp>
 
 
-
-#define PI 3.14159265 // Should be used from mathlib
+//#define PI 3.14159265 // Should be used from mathlib
 
 using namespace std;
+using namespace CGL;
 
 
 #define OUTPUT_ANIMATION 0
@@ -23,7 +28,7 @@ using namespace std;
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "Particles.h"
+//#include "Particles.h"
 #include "SolidSphere.cpp"
 
 #if OUTPUT_ANIMATION
@@ -65,15 +70,12 @@ int frame = 0;
 const int render_step = 3;
 int mx, my;
 
-Particles particles;
+//Particles particles;
 
 
-SolidSphere sphere1(2, 24, 48);
-SolidSphere sphere(1, 12, 24);
-
-
-
-
+//SolidSphere sphere1(2, 24, 48);
+Vector3D pos = Vector3D(1, 1, 1);
+SolidSphere sphere = SolidSphere(pos);
 
 
 
@@ -124,8 +126,9 @@ void display( GLFWwindow* window )
       //      0, 1, 0);
     
     // drawing start
-    sphere.draw(0, 0, 0);
-    sphere1.draw(2, 2, 2);
+    //sphere.draw(1, 1, 1);
+    sphere.draw();
+    //sphere1.draw(2, 2, 2);
     
     
     //particles.render();
@@ -174,8 +177,8 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 {
     switch (key) {
             
-        case GLFW_KEY_ESCAPE: glfwSetWindowShouldClose(window, GLFW_TRUE); break;
-        case GLFW_KEY_Q: glfwSetWindowShouldClose(window, GLFW_TRUE); break;
+        case GLFW_KEY_ESCAPE: glfwSetWindowShouldClose(window, 1); break;
+        case GLFW_KEY_Q: glfwSetWindowShouldClose(window, 1); break;
         case GLFW_KEY_LEFT :
             if (action && mods == GLFW_MOD_SHIFT) viewX -= 0.001f * width;
             else rotateX += 0.01f * width;
