@@ -56,10 +56,11 @@ public:
     double bound; // (- bound, - bound, - bound) to (bound, bound, bound)
     int N; // number of particles per side
     double dt;
+    double initial_height;
 
 
     Particles();
-    Particles(double cube_length, double bound, int N, double d);
+    Particles(double cube_length, double bound, int N, double d, double h);
     void render() const;
     float hash_position(Vector3D pos);
     void simulate(double frames_per_sec, double simulation_steps);// simulate one frame

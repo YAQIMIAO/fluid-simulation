@@ -318,7 +318,8 @@ void idle(void)
 
 int main(int argc, char** argv)
 {
-    testCube = Particles(1.0, 1.0, 10, 0.1);
+    //testCube = Particles(1.0, 1.0, 10, 0.1, 10.0);
+    testCube = Particles();
 
 
 

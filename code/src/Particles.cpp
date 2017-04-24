@@ -17,31 +17,12 @@
 
 Particles::Particles() 
 {
-    int nx = 10;
-    int ny = 10;
-    int nz = 10;
+    this->cube_length = 1.0;
+    this->bound = 1.0 - 0.05;
+    this->N = 10;
+    this->dt = 0.1;
+    this->initial_height = 10.0;
     float d = 0.1;
-    for(int x=0; x<nx; x++)
-    {
-        for(int y=0; y<ny; y++)
-        {
-            for(int z=0; z<nz; z++)
-            {
-                Particle par;
-                par.p = Vector3D((x+0.5-nx*0.5)*d, (y+0.5)*d-1.0, (z+0.5-nz*0.5)*d);
-                par.last_p = Vector3D((x+0.5-N*0.5)*d, (y+0.5)*d-1.0, (z+0.5-N*0.5)*d);
-                par.v = Vector3D(0, 0, 0);
-                particles.push_back(par);
-            }
-        }
-    }
-}
-
-Particles::Particles(double cube_length, double bound, int N, double d) {
-    this->cube_length = cube_length;
-    this->bound = bound - 0.05;
-    this->N = N;
-    this->dt = d;
     for(int x=0; x<N; x++)
     {
         for(int y=0; y<N; y++)
@@ -49,8 +30,30 @@ Particles::Particles(double cube_length, double bound, int N, double d) {
             for(int z=0; z<N; z++)
             {
                 Particle par;
-                par.p = Vector3D((x+0.5-N*0.5)*d, (y+10.5)*d-1.0, (z+0.5-N*0.5)*d);
-                par.last_p = Vector3D((x+0.5-N*0.5)*d, (y+10.5)*d-1.0, (z+0.5-N*0.5)*d);
+                par.p = Vector3D((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
+                par.last_p = Vector3D((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
+                par.v = Vector3D(0, 0, 0);
+                particles.push_back(par);
+            }
+        }
+    }
+}
+
+Particles::Particles(double cube_length, double bound, int N, double d, double h) {
+    this->cube_length = cube_length;
+    this->bound = bound - 0.05;
+    this->N = N;
+    this->dt = d;
+    this->initial_height = h;
+    for(int x=0; x<N; x++)
+    {
+        for(int y=0; y<N; y++)
+        {
+            for(int z=0; z<N; z++)
+            {
+                Particle par;
+                par.p = Vector3D((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
+                par.last_p = Vector3D((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
                 par.v = Vector3D(0, 0, 0);
                 particles.push_back(par);
             }
