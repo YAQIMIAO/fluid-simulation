@@ -28,7 +28,7 @@ public:
 
 
 
-    SolidSphere(float radius=0.05, unsigned int rings=10, unsigned int sectors=10)
+    SolidSphere(float radius=0.1, unsigned int rings=10, unsigned int sectors=10)
     {
         r = radius;
 

@@ -73,6 +73,7 @@ int mx, my;
 
 Particles particles;
 
+Particles testCube;
 
 
 //****************************************************
@@ -118,13 +119,14 @@ void display( GLFWwindow* window )
 
     //gluPerspective(90, 1, 0.01, 100);
     //gluLookAt(dist*sin(phi)*cos(theta), dist*cos(phi), dist*sin(phi)*sin(theta),
-     //       0, 0, 0,
-      //      0, 1, 0);
+    //        0, 0, 0,
+    //        0, 1, 0);
     
     // drawing start
 
-    particles.render();
-    
+    testCube.render();
+
+
     glPopMatrix();
     
     glfwSwapBuffers(window);
@@ -133,9 +135,11 @@ void display( GLFWwindow* window )
     // for wireframe and shading commands
 }
 
-/*
+
 
 void updateDisplay( GLFWwindow* window ){
+    /*
+     * original skeleton
     int dx = x - mx;
     int dy = y - my;
     mx = x;
@@ -149,13 +153,13 @@ void updateDisplay( GLFWwindow* window ){
     if(theta < -2*M_PI)
         theta += 2*M_PI;
     phi = clip(phi, M_PI/12, M_PI*11/12);
+     */
+
+    testCube.FluidCubeStep();
 
     display(window);
     
 }
- */
-
-
 
 
 
@@ -188,7 +192,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
             else rotateY -= 0.01f * height;
             break;
         case GLFW_KEY_SPACE:
-            //updateDisplay(window);
+            updateDisplay(window);
             break;
             
         default: break;
@@ -270,6 +274,11 @@ void idle(void)
 
 int main(int argc, char** argv)
 {
+    testCube = Particles(10, 5, 5, 0.1);
+    testCube.FluidCubeAddDensity(2, 2, 2, 10);
+    testCube.FluidCubeAddVelocity(2, 2, 2, 4, 4, 4);
+
+
     //This initializes glfw
     initializeRendering();
 
@@ -308,7 +317,7 @@ int main(int argc, char** argv)
     
     
     // shading
-    
+    /*
     glShadeModel(GL_NORMALIZE);
     glEnable(GL_NORMALIZE);
     glEnable(GL_LIGHTING);
@@ -325,10 +334,7 @@ int main(int argc, char** argv)
     
     glEnable(GL_LIGHT0);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-    
-    
-    
-    
+     */
     
     /*
     
@@ -340,10 +346,12 @@ int main(int argc, char** argv)
     glutMainLoop();
     glutKeyboardFunc(keyboard);
      */
+
+
     glEnable(GL_DEPTH_TEST);	// enable z-buffering
     glDepthFunc(GL_LESS);
     
-    glfwSetWindowTitle(window, "CS184");
+    glfwSetWindowTitle(window, "Fluid Simulation");
     glfwSetWindowSizeCallback(window, size_callback);
     glfwSetKeyCallback(window, key_callback);
     glfwSetMouseButtonCallback(window, mouse_button_callback);
