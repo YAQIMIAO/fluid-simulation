@@ -788,25 +788,13 @@ detail/type_vec4.hpp
 detail/func_vector_relational.hpp
 ../glm/glm/detail/func_vector_relational.hpp
 
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Cube.cpp
-OpenGL/gl.h
--
-vector
--
-cmath
--
-CGL/CGL.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/CGL.h
-CGL/vector3D.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/vector3D.h
-
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.cpp
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.cpp
 Particles.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
 SolidSphere.cpp
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
 
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
 glm/glm.hpp
 -
 vector
@@ -822,7 +810,7 @@ GL/glut.h
 math.h
 -
 
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
 OpenGL/gl.h
 -
 OpenGL/glu.h
@@ -832,15 +820,15 @@ vector
 cmath
 -
 CGL/CGL.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/CGL.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/CGL.h
 CGL/vector3D.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/vector3D.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/vector3D.h
 CGL/matrix3x3.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/matrix3x3.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/matrix3x3.h
 CGL/lodepng.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/lodepng.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/lodepng.h
 
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/main.cpp
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/main.cpp
 GLFW/glfw3.h
 -
 OpenGL/glu.h
@@ -852,25 +840,23 @@ math.h
 cstring
 -
 CGL/CGL.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/CGL.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/CGL.h
 CGL/vector3D.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/vector3D.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/vector3D.h
 CGL/matrix3x3.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/matrix3x3.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/matrix3x3.h
 CGL/lodepng.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/lodepng.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/CGL/lodepng.h
 glm/glm.hpp
 -
 stdlib.h
 -
 stdio.h
 -
-Cube.cpp
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Cube.cpp
 SolidSphere.cpp
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
 Particles.h
-/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
+/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
 opencv2/opencv.hpp
 -
 

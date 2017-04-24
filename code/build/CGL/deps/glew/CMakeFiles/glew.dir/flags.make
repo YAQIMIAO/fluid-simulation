@@ -6,5 +6,5 @@ C_FLAGS =  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glew/include 
+C_INCLUDES = -I/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glew/include 
 

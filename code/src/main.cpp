@@ -28,7 +28,6 @@ using namespace CGL;
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "Cube.cpp"
 #include "SolidSphere.cpp"
 #include "Particles.h"
 

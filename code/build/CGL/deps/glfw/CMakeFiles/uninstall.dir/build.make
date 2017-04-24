@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.7.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code
+CMAKE_SOURCE_DIR = /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build
+CMAKE_BINARY_DIR = /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build
 
 # Utility rule file for uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simula
 include CGL/deps/glfw/CMakeFiles/uninstall.dir/progress.make
 
 CGL/deps/glfw/CMakeFiles/uninstall:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw && /usr/local/Cellar/cmake/3.7.2/bin/cmake -P /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/cmake_uninstall.cmake
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw && /usr/local/Cellar/cmake/3.7.2/bin/cmake -P /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/cmake_uninstall.cmake
 
 uninstall: CGL/deps/glfw/CMakeFiles/uninstall
 uninstall: CGL/deps/glfw/CMakeFiles/uninstall.dir/build.make
@@ -67,10 +67,10 @@ CGL/deps/glfw/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : CGL/deps/glfw/CMakeFiles/uninstall.dir/build
 
 CGL/deps/glfw/CMakeFiles/uninstall.dir/clean:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : CGL/deps/glfw/CMakeFiles/uninstall.dir/clean
 
 CGL/deps/glfw/CMakeFiles/uninstall.dir/depend:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glfw /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glfw /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CGL/deps/glfw/CMakeFiles/uninstall.dir/depend
 

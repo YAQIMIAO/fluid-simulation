@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.7.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code
+CMAKE_SOURCE_DIR = /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build
+CMAKE_BINARY_DIR = /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -124,14 +124,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CMakeFiles /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/src/CMakeFiles/progress.marks
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CMakeFiles 0
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CMakeFiles /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/src/CMakeFiles/progress.marks
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/sim.dir/rule:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/sim.dir/rule
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/sim.dir/rule
 .PHONY : src/CMakeFiles/sim.dir/rule
 
 # Convenience name for target.
@@ -166,35 +166,8 @@ sim: src/CMakeFiles/sim.dir/rule
 
 # fast build rule for target.
 sim/fast:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/build
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/build
 .PHONY : sim/fast
-
-Cube.o: Cube.cpp.o
-
-.PHONY : Cube.o
-
-# target to build an object file
-Cube.cpp.o:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Cube.cpp.o
-.PHONY : Cube.cpp.o
-
-Cube.i: Cube.cpp.i
-
-.PHONY : Cube.i
-
-# target to preprocess a source file
-Cube.cpp.i:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Cube.cpp.i
-.PHONY : Cube.cpp.i
-
-Cube.s: Cube.cpp.s
-
-.PHONY : Cube.s
-
-# target to generate assembly for a file
-Cube.cpp.s:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Cube.cpp.s
-.PHONY : Cube.cpp.s
 
 Particles.o: Particles.cpp.o
 
@@ -202,7 +175,7 @@ Particles.o: Particles.cpp.o
 
 # target to build an object file
 Particles.cpp.o:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Particles.cpp.o
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Particles.cpp.o
 .PHONY : Particles.cpp.o
 
 Particles.i: Particles.cpp.i
@@ -211,7 +184,7 @@ Particles.i: Particles.cpp.i
 
 # target to preprocess a source file
 Particles.cpp.i:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Particles.cpp.i
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Particles.cpp.i
 .PHONY : Particles.cpp.i
 
 Particles.s: Particles.cpp.s
@@ -220,7 +193,7 @@ Particles.s: Particles.cpp.s
 
 # target to generate assembly for a file
 Particles.cpp.s:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Particles.cpp.s
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Particles.cpp.s
 .PHONY : Particles.cpp.s
 
 SolidSphere.o: SolidSphere.cpp.o
@@ -229,7 +202,7 @@ SolidSphere.o: SolidSphere.cpp.o
 
 # target to build an object file
 SolidSphere.cpp.o:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/SolidSphere.cpp.o
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/SolidSphere.cpp.o
 .PHONY : SolidSphere.cpp.o
 
 SolidSphere.i: SolidSphere.cpp.i
@@ -238,7 +211,7 @@ SolidSphere.i: SolidSphere.cpp.i
 
 # target to preprocess a source file
 SolidSphere.cpp.i:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/SolidSphere.cpp.i
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/SolidSphere.cpp.i
 .PHONY : SolidSphere.cpp.i
 
 SolidSphere.s: SolidSphere.cpp.s
@@ -247,7 +220,7 @@ SolidSphere.s: SolidSphere.cpp.s
 
 # target to generate assembly for a file
 SolidSphere.cpp.s:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/SolidSphere.cpp.s
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/SolidSphere.cpp.s
 .PHONY : SolidSphere.cpp.s
 
 main.o: main.cpp.o
@@ -256,7 +229,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/main.cpp.o
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -265,7 +238,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/main.cpp.i
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -274,7 +247,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/main.cpp.s
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -290,9 +263,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Cube.o"
-	@echo "... Cube.i"
-	@echo "... Cube.s"
 	@echo "... Particles.o"
 	@echo "... Particles.i"
 	@echo "... Particles.s"
@@ -313,6 +283,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

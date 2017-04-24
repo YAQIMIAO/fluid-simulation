@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: \"/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/install_manifest.txt\"")
+if (NOT EXISTS "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: \"/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/install_manifest.txt" files)
+file(READ "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

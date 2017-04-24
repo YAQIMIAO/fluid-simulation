@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -m64 -O3 -funroll-loops -Wno-narrowing -Wno-deprecated-r
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/include -I/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/glm 
+CXX_INCLUDES = -I/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/include -I/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/glm 
 

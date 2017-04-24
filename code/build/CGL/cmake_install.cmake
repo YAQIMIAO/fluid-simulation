@@ -1,8 +1,8 @@
-# Install script for directory: /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL
+# Install script for directory: /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL")
+  set(CMAKE_INSTALL_PREFIX "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -29,9 +29,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glew/cmake_install.cmake")
-  include("/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/cmake_install.cmake")
-  include("/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/src/cmake_install.cmake")
+  include("/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glew/cmake_install.cmake")
+  include("/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/cmake_install.cmake")
+  include("/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/src/cmake_install.cmake")
 
 endif()
 

@@ -6,5 +6,5 @@ C_FLAGS =  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX
 
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glfw/src -I/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/src 
+C_INCLUDES = -I/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glfw/src -I/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/src 
 
