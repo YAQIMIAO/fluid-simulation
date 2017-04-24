@@ -49,6 +49,12 @@ private:
     // components
     vector<Particle> particles;
 
+    // spatial map
+    unordered_map<float, vector<Particle *> *> map;
+
+    // gravity
+    Vector3D g = Vector3D(0, -9.8, 0); // m per square s
+
 
 public:
     // properties
@@ -58,7 +64,6 @@ public:
     double dt;
     double initial_height;
 
-
     Particles();
     Particles(double cube_length, double bound, int N, double d, double h);
     void render() const;
@@ -66,11 +71,6 @@ public:
     void simulate(double frames_per_sec, double simulation_steps);// simulate one frame
     void self_collide(Particle &par, double simulation_steps);
     void build_spatial_map();
-
-    Vector3D g = Vector3D(0, -9.8, 0); // m per square s
-    unordered_map<float, vector<Particle *> *> map;
-
-
 
 };
 

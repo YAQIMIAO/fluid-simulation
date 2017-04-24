@@ -365,6 +365,9 @@ int main(int argc, char** argv)
     float diffuse[]={0.2, 0.7, 0.6, 0.5};
     float ambient[]={0.2, 0.7, 0.6, 0.5};
     float specular[]={1.0, 0.0, 0.0, 1.0};
+
+    // need to experiment with a better light position
+    // this position is giving me aids currently
     float light0_pos[]={-1.0, 2.0, -2.0, 1.0};
     
     glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);

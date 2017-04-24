@@ -15,6 +15,10 @@
 #include "SolidSphere.cpp"
 
 
+//****************************************************
+// Constructor
+//***************************************************
+
 Particles::Particles() 
 {
     this->cube_length = 1.0;
@@ -61,6 +65,12 @@ Particles::Particles(double cube_length, double bound, int N, double d, double h
     }
 
 }
+
+
+
+//****************************************************
+// A spatial map to help detect neighbor particles
+//***************************************************
 
 void Particles::build_spatial_map() {
     for (const auto &entry : map) {
@@ -119,11 +129,14 @@ float Particles::hash_position(Vector3D pos) {
 }
 
 
-
+//****************************************************
+// Handling self-collision
+//***************************************************
 
 
 void Particles::self_collide(Particle &par, double simulation_steps) {
     float hash_value = hash_position(par.p);
+    //TODO:
 
 
 }
@@ -131,6 +144,8 @@ void Particles::self_collide(Particle &par, double simulation_steps) {
 void Particles::simulate(double frames_per_sec, double simulation_steps){
     double mass = pow(cube_length, 3) / pow(N, 3);
     double delta_t = 1.0f / frames_per_sec / simulation_steps;
+
+    // falling according to gravity
     for (Particle &par: particles){
         Vector3D v = g * delta_t;
         par.v += v;
@@ -139,13 +154,13 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
 
     }
 
-
+    // self-collision - so that particles don't fall onto each other
     for (Particle &par: particles){
         self_collide(par, simulation_steps);
     }
 
 
-    // cannot run out of tank
+    // stop falling when hits the tank
     for (Particle &par: particles){
         if (par.p.x <= -bound){
             par.p.x = -bound;
@@ -168,13 +183,9 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
 }
 
 
-
-
-
-
-
-
-
+//*****************************
+// Rendering method
+//*****************************
 
 
 void Particles::render() const

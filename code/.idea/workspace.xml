@@ -70,8 +70,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="320" column="50" lean-forward="false" selection-start-line="320" selection-start-column="50" selection-end-line="320" selection-end-column="50" />
+            <state relative-caret-position="292">
+              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="149" selection-end-column="53" />
               <folding>
                 <element signature="e#244#267#0" expanded="true" />
                 <element signature="e#599#618#0" expanded="true" />
@@ -80,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Particles.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Particles.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-127">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="3225">
+              <caret line="215" column="23" lean-forward="false" selection-start-line="215" selection-start-column="23" selection-end-line="215" selection-end-column="23" />
               <folding>
                 <element signature="e#278#300#0" expanded="true" />
               </folding>
@@ -92,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Particles.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Particles.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Particles.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="e#316#338#0" expanded="true" />
               </folding>
@@ -164,8 +164,8 @@
         <option value="$PROJECT_DIR$/src/Cube.cpp" />
         <option value="$PROJECT_DIR$/src/SolidSphere.cpp" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/src/Particles.h" />
         <option value="$PROJECT_DIR$/src/Particles.cpp" />
+        <option value="$PROJECT_DIR$/src/Particles.h" />
       </list>
     </option>
   </component>
@@ -630,12 +630,12 @@
       <workItem from="1492987330142" duration="2252000" />
       <workItem from="1492993901062" duration="157000" />
       <workItem from="1492994063003" duration="26078000" />
-      <workItem from="1493068360002" duration="1489000" />
+      <workItem from="1493068360002" duration="2323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29976000" />
+    <option name="totallyTimeSpent" value="30810000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="190" y="23" width="984" height="777" extended-state="0" />
@@ -794,8 +794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="320" column="50" lean-forward="false" selection-start-line="320" selection-start-column="50" selection-end-line="320" selection-end-column="50" />
+        <state relative-caret-position="292">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="149" selection-end-column="53" />
           <folding>
             <element signature="e#244#267#0" expanded="true" />
             <element signature="e#599#618#0" expanded="true" />
@@ -803,22 +803,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Particles.h">
+    <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="3225">
+          <caret line="215" column="23" lean-forward="false" selection-start-line="215" selection-start-column="23" selection-end-line="215" selection-end-column="23" />
           <folding>
-            <element signature="e#316#338#0" expanded="true" />
+            <element signature="e#278#300#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
+    <entry file="file://$PROJECT_DIR$/src/Particles.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-127">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="127">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="e#278#300#0" expanded="true" />
+            <element signature="e#316#338#0" expanded="true" />
           </folding>
         </state>
       </provider>
