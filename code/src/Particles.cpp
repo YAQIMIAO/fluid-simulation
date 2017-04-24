@@ -111,7 +111,7 @@ float Particles::hash_position(Vector3D pos) {
     float width = 2.0 * bound;
     float W = 3.0f * width / N;
 
-    float bucket_length_w = (5.0 * 1.5 * dt/(2.0 * width)) * W;
+    float bucket_length_w = (5.0 * 1.5 * 0.3/(2.0 * width)) * W;
 
 
     int x = (int)(floor(((pos.x/ width) * W) / bucket_length_w));
@@ -135,13 +135,44 @@ float Particles::hash_position(Vector3D pos) {
 
 
 void Particles::self_collide(Particle &par, double simulation_steps) {
+    // TODO: need to define a thickness value
+    double thickness = 0.1;
+
     float hash_value = hash_position(par.p);
     //TODO:
 
 
+
+    if (map[hash_value] != NULL && map[hash_value]->size() > 1) {
+        cout<<"box with more than 1 item detected!"<<endl;
+        cout<<"box size: " <<map[hash_value]->size()<<endl;
+        Vector3D correctionVs = Vector3D(0.0, 0.0, 0.0);
+        int count = 0;
+        for (Particle *particle: *(map[hash_value])){
+            if (particle != &par){
+                if ((particle->p - par.p).norm() < 2.0 * thickness){
+                    Vector3D d = (par.last_p - particle->p).unit();
+                    Vector3D new_p = particle->p + d * 2.0 * thickness;
+                    Vector3D correctionV = new_p - par.p;
+                    correctionVs += correctionV;
+                    count++;
+                }
+            }
+
+        }
+        if (count != 0){
+            Vector3D finalCorrectionV = (correctionVs / (double) count) / simulation_steps;
+            par.p += finalCorrectionV;
+        }
+
+    }
+
 }
 
 void Particles::simulate(double frames_per_sec, double simulation_steps){
+    // before simulate: build the spatial map
+    build_spatial_map();
+
     double mass = pow(cube_length, 3) / pow(N, 3);
     double delta_t = 1.0f / frames_per_sec / simulation_steps;
 
@@ -177,9 +208,7 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
         if (par.p.z >= bound){
             par.p.z = bound;
         }
-
     }
-
 }
 
 
