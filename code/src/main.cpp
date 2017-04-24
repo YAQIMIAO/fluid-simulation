@@ -35,27 +35,18 @@ using namespace CGL;
 #include <opencv2/opencv.hpp>
 #endif
 
-
-inline float clip(const float& n, const float& lower, const float& upper) 
-{
-    return glm::max(lower, glm::min(n, upper));
-}
-
-
-
 //****************************************************
 // Global Variables
 //****************************************************
 
-GLfloat translation[3] = {0.0f, 0.0f, 0.0f};
 bool auto_strech = false;
 int Z_buffer_bit_depth = 128;
 
 inline float sqr(float x) { return x*x; }
 GLfloat viewX = 0;
 GLfloat viewY = 0;
-GLfloat viewZ = 1;
-float rotateX = 135;
+GLfloat viewZ = 0;
+float rotateX = 180;
 float rotateY = 0;
 
 float angle = 0;
@@ -70,9 +61,11 @@ int frame = 0;
 const int render_step = 3;
 int mx, my;
 
-Particles particles;
+Particles waterCube;
 
 Particles testCube;
+
+float BOUNDING_BOX_LENGTH = 2.0f;
 
 
 //****************************************************
@@ -97,6 +90,62 @@ void setPixel(float x, float y, GLfloat r, GLfloat g, GLfloat b) {
 
 
 //****************************************************
+// helper functions
+//***************************************************
+
+void drawCube(float box_length = 2.5f) {
+    glColor3f(0.0f, 0.0f, 1.0f);
+    glBegin(GL_LINES);                // Begin drawing the color cube with 6 quads
+
+//front
+    glVertex3f(-box_length, box_length, box_length);
+    glVertex3f(box_length, box_length, box_length);
+
+    glVertex3f(box_length, box_length, box_length);
+    glVertex3f(box_length, -box_length, box_length);
+
+    glVertex3f(box_length, -box_length, box_length);
+    glVertex3f(-box_length, -box_length, box_length);
+
+    glVertex3f(-box_length, -box_length, box_length);
+    glVertex3f(-box_length, box_length, box_length);
+
+//right
+    glVertex3f(box_length, box_length, box_length);
+    glVertex3f(box_length, box_length, -box_length);
+
+    glVertex3f(box_length, box_length, -box_length);
+    glVertex3f(box_length, -box_length, -box_length);
+
+    glVertex3f(box_length, -box_length, -box_length);
+    glVertex3f(box_length, -box_length, box_length);
+
+//back
+    glVertex3f(box_length, box_length, -box_length);
+    glVertex3f(-box_length, box_length, -box_length);
+
+    glVertex3f(-box_length, -box_length, -box_length);
+    glVertex3f(box_length, -box_length, -box_length);
+
+    glVertex3f(-box_length, -box_length, -box_length);
+    glVertex3f(-box_length, box_length, -box_length);
+
+//left
+    glVertex3f(-box_length, box_length, -box_length);
+    glVertex3f(-box_length, box_length, box_length);
+
+    glVertex3f(-box_length, -box_length, box_length);
+    glVertex3f(-box_length, -box_length, -box_length);
+    glEnd();
+}
+
+inline float clip(const float& n, const float& lower, const float& upper)
+{
+    return glm::max(lower, glm::min(n, upper));
+}
+
+
+//****************************************************
 // function that does the actual drawing of stuff
 //***************************************************
 
@@ -110,19 +159,19 @@ void display( GLFWwindow* window )
     
     //----------------------- code to draw objects --------------------------
     glPushMatrix();
-    glTranslatef (translation[0], translation[1], translation[2]);
-    glTranslatef (viewX, viewY, viewZ);
+    glTranslatef(viewX, viewY, viewZ);
     glRotatef(rotateX, 0, 1, 0); //rotates the cube below
     glRotatef(rotateY, 1, 0, 0);
     
 
-    //gluPerspective(90, 1, 0.01, 100);
+    //gluPerspective(90, 1, 1, 1.2);
     //gluLookAt(dist*sin(phi)*cos(theta), dist*cos(phi), dist*sin(phi)*sin(theta),
     //        0, 0, 0,
     //        0, 1, 0);
     
     // drawing start
 
+    drawCube(BOUNDING_BOX_LENGTH);
     testCube.render();
 
 
@@ -153,9 +202,7 @@ void updateDisplay( GLFWwindow* window ){
         theta += 2*M_PI;
     phi = clip(phi, M_PI/12, M_PI*11/12);
      */
-
-    testCube.FluidCubeStep();
-
+    testCube.simulate(10, 1);
     display(window);
     
 }
@@ -226,21 +273,19 @@ static void cursor_position_callback(GLFWwindow* window, double xpos, double ypo
 //****************************************************
 // function that is called when window is resized
 //***************************************************
-void size_callback(GLFWwindow* window, int width, int height)
+void size_callback(GLFWwindow* window, int w, int h)
 {
     // Get the pixel coordinate of the window
     // it returns the size, in pixels, of the framebuffer of the specified window
-    glfwGetFramebufferSize(window, &width, &height);
+    glfwGetFramebufferSize(window, &w, &h);
     
-    glViewport(0, 0, width, height);
+    glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0, width, 0, height, 1, -1);
+    glOrtho(0, w, 0, h, 1, -1);
     
     display(window);
 }
-
-
 
 
 /* not sure what idle is doing here???
@@ -273,9 +318,8 @@ void idle(void)
 
 int main(int argc, char** argv)
 {
-    testCube = Particles(10, 5, 5, 0.1);
-    testCube.FluidCubeAddDensity(2, 2, 2, 10);
-    testCube.FluidCubeAddVelocity(2, 2, 2, 4, 4, 4);
+    testCube = Particles(1.0, 1.0, 10, 0.1);
+
 
 
     //This initializes glfw
@@ -309,14 +353,10 @@ int main(int argc, char** argv)
     glOrtho(-3.5, 3.5, -3.5, 3.5, 5, -5);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    
-    
-    
-    
-    
+
     
     // shading
-    /*
+
     glShadeModel(GL_NORMALIZE);
     glEnable(GL_NORMALIZE);
     glEnable(GL_LIGHTING);
@@ -333,10 +373,10 @@ int main(int argc, char** argv)
     
     glEnable(GL_LIGHT0);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-     */
+
     
-    /*
-    
+    /* original glut skeleton
+
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     glutIdleFunc(idle);
