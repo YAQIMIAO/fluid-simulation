@@ -220,7 +220,7 @@ CGL/deps/glfw/src/preinstall:
 CGL/deps/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f CGL/deps/glfw/src/CMakeFiles/glfw.dir/build.make CGL/deps/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f CGL/deps/glfw/src/CMakeFiles/glfw.dir/build.make CGL/deps/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=58,59,60,61,62,63,64,65,66,67,68,69 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=58,59,60,61,62,63,64,65,66,67,68,69,70 "Built target glfw"
 .PHONY : CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 
 # Include target in all.
@@ -230,7 +230,7 @@ all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/src/CMakeFiles/glfw.dir/rule
@@ -297,7 +297,7 @@ all: CGL/deps/glfw/examples/CMakeFiles/Wave.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/examples/CMakeFiles/Wave.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/examples/CMakeFiles/Wave.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/examples/CMakeFiles/Wave.dir/rule
@@ -334,7 +334,7 @@ all: CGL/deps/glfw/examples/CMakeFiles/Simple.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/examples/CMakeFiles/Simple.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/examples/CMakeFiles/Simple.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/examples/CMakeFiles/Simple.dir/rule
@@ -371,7 +371,7 @@ all: CGL/deps/glfw/examples/CMakeFiles/SplitView.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/examples/CMakeFiles/SplitView.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/examples/CMakeFiles/SplitView.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/examples/CMakeFiles/SplitView.dir/rule
@@ -408,7 +408,7 @@ all: CGL/deps/glfw/examples/CMakeFiles/Particles.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/examples/CMakeFiles/Particles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/examples/CMakeFiles/Particles.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/examples/CMakeFiles/Particles.dir/rule
@@ -445,7 +445,7 @@ all: CGL/deps/glfw/examples/CMakeFiles/Gears.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/examples/CMakeFiles/Gears.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/examples/CMakeFiles/Gears.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/examples/CMakeFiles/Gears.dir/rule
@@ -482,7 +482,7 @@ all: CGL/deps/glfw/examples/CMakeFiles/Heightmap.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/examples/CMakeFiles/Heightmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/examples/CMakeFiles/Heightmap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/examples/CMakeFiles/Heightmap.dir/rule
@@ -519,7 +519,7 @@ all: CGL/deps/glfw/examples/CMakeFiles/Boing.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/examples/CMakeFiles/Boing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/examples/CMakeFiles/Boing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/examples/CMakeFiles/Boing.dir/rule
@@ -602,7 +602,7 @@ CGL/deps/glfw/tests/preinstall:
 CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/build.make CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/build.make CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=34,35 "Built target clipboard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=34,35,36 "Built target clipboard"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/all
 
 # Include target in all.
@@ -612,7 +612,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/clipboard.dir/rule
@@ -649,7 +649,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/title.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/title.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/title.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/title.dir/rule
@@ -686,7 +686,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/windows.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/windows.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/windows.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/windows.dir/rule
@@ -723,7 +723,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/threads.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/threads.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/threads.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/threads.dir/rule
@@ -760,7 +760,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/gamma.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/gamma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/gamma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/gamma.dir/rule
@@ -797,7 +797,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/tearing.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/tearing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/tearing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/tearing.dir/rule
@@ -824,7 +824,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/tearing.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/monitors.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/monitors.dir/build.make CGL/deps/glfw/tests/CMakeFiles/monitors.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/monitors.dir/build.make CGL/deps/glfw/tests/CMakeFiles/monitors.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=78,79,80 "Built target monitors"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=79,80,81 "Built target monitors"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/monitors.dir/all
 
 # Include target in all.
@@ -834,7 +834,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/monitors.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/monitors.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/monitors.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/monitors.dir/rule
@@ -861,7 +861,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/monitors.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/sharing.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/sharing.dir/build.make CGL/deps/glfw/tests/CMakeFiles/sharing.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/sharing.dir/build.make CGL/deps/glfw/tests/CMakeFiles/sharing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=85,86 "Built target sharing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=86,87 "Built target sharing"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/sharing.dir/all
 
 # Include target in all.
@@ -871,7 +871,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/sharing.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/sharing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/sharing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/sharing.dir/rule
@@ -898,7 +898,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/sharing.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/empty.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/empty.dir/build.make CGL/deps/glfw/tests/CMakeFiles/empty.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/empty.dir/build.make CGL/deps/glfw/tests/CMakeFiles/empty.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=42,43,44 "Built target empty"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=43,44,45 "Built target empty"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/empty.dir/all
 
 # Include target in all.
@@ -908,7 +908,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/empty.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/empty.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/empty.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/empty.dir/rule
@@ -935,7 +935,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/empty.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/peter.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/peter.dir/build.make CGL/deps/glfw/tests/CMakeFiles/peter.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/peter.dir/build.make CGL/deps/glfw/tests/CMakeFiles/peter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=81,82 "Built target peter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=82,83 "Built target peter"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/peter.dir/all
 
 # Include target in all.
@@ -945,7 +945,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/peter.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/peter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/peter.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/peter.dir/rule
@@ -972,7 +972,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/peter.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/cursor.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/cursor.dir/build.make CGL/deps/glfw/tests/CMakeFiles/cursor.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/cursor.dir/build.make CGL/deps/glfw/tests/CMakeFiles/cursor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=36,37 "Built target cursor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=37,38 "Built target cursor"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/cursor.dir/all
 
 # Include target in all.
@@ -982,7 +982,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/cursor.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/cursor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/cursor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/cursor.dir/rule
@@ -1009,7 +1009,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/cursor.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/build.make CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/build.make CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=70,71,72 "Built target glfwinfo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=71,72,73 "Built target glfwinfo"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/all
 
 # Include target in all.
@@ -1019,7 +1019,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/rule
@@ -1046,7 +1046,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/glfwinfo.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/build.make CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/build.make CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=38,39 "Built target cursoranim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=39,40 "Built target cursoranim"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/all
 
 # Include target in all.
@@ -1056,7 +1056,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/rule
@@ -1083,7 +1083,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/cursoranim.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/reopen.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/reopen.dir/build.make CGL/deps/glfw/tests/CMakeFiles/reopen.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/reopen.dir/build.make CGL/deps/glfw/tests/CMakeFiles/reopen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=83,84 "Built target reopen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=84,85 "Built target reopen"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/reopen.dir/all
 
 # Include target in all.
@@ -1093,7 +1093,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/reopen.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/reopen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/reopen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/reopen.dir/rule
@@ -1120,7 +1120,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/reopen.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/iconify.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/iconify.dir/build.make CGL/deps/glfw/tests/CMakeFiles/iconify.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/iconify.dir/build.make CGL/deps/glfw/tests/CMakeFiles/iconify.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=73,74,75 "Built target iconify"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=74,75,76 "Built target iconify"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/iconify.dir/all
 
 # Include target in all.
@@ -1130,7 +1130,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/iconify.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/iconify.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/iconify.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/iconify.dir/rule
@@ -1157,7 +1157,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/iconify.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/build.make CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/build.make CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=76,77 "Built target joysticks"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=77,78 "Built target joysticks"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/all
 
 # Include target in all.
@@ -1167,7 +1167,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/rule
@@ -1194,7 +1194,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/joysticks.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/events.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/events.dir/build.make CGL/deps/glfw/tests/CMakeFiles/events.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/events.dir/build.make CGL/deps/glfw/tests/CMakeFiles/events.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=45,46,47 "Built target events"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=46,47,48 "Built target events"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/events.dir/all
 
 # Include target in all.
@@ -1204,7 +1204,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/events.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/events.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/events.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/events.dir/rule
@@ -1241,7 +1241,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/accuracy.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/accuracy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/accuracy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/accuracy.dir/rule
@@ -1268,7 +1268,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/accuracy.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/fsaa.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/fsaa.dir/build.make CGL/deps/glfw/tests/CMakeFiles/fsaa.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/fsaa.dir/build.make CGL/deps/glfw/tests/CMakeFiles/fsaa.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=48,49,50 "Built target fsaa"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=49,50 "Built target fsaa"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/fsaa.dir/all
 
 # Include target in all.
@@ -1305,7 +1305,7 @@ clean: CGL/deps/glfw/tests/CMakeFiles/fsaa.dir/clean
 CGL/deps/glfw/tests/CMakeFiles/defaults.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/defaults.dir/build.make CGL/deps/glfw/tests/CMakeFiles/defaults.dir/depend
 	$(MAKE) -f CGL/deps/glfw/tests/CMakeFiles/defaults.dir/build.make CGL/deps/glfw/tests/CMakeFiles/defaults.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=40,41 "Built target defaults"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=41,42 "Built target defaults"
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/defaults.dir/all
 
 # Include target in all.
@@ -1315,7 +1315,7 @@ all: CGL/deps/glfw/tests/CMakeFiles/defaults.dir/all
 
 # Build rule for subdir invocation for target.
 CGL/deps/glfw/tests/CMakeFiles/defaults.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CGL/deps/glfw/tests/CMakeFiles/defaults.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles 0
 .PHONY : CGL/deps/glfw/tests/CMakeFiles/defaults.dir/rule
@@ -1417,7 +1417,7 @@ src/CMakeFiles/sim.dir/all: CGL/deps/glfw/src/CMakeFiles/glfw.dir/all
 src/CMakeFiles/sim.dir/all: CGL/src/CMakeFiles/CGL.dir/all
 	$(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/depend
 	$(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=87,88,89,90,91 "Built target sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=88,89,90,91 "Built target sim"
 .PHONY : src/CMakeFiles/sim.dir/all
 
 # Include target in all.

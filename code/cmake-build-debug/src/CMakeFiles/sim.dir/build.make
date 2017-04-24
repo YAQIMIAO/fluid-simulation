@@ -105,33 +105,9 @@ src/CMakeFiles/sim.dir/SolidSphere.cpp.o.provides: src/CMakeFiles/sim.dir/SolidS
 src/CMakeFiles/sim.dir/SolidSphere.cpp.o.provides.build: src/CMakeFiles/sim.dir/SolidSphere.cpp.o
 
 
-src/CMakeFiles/sim.dir/Cube.cpp.o: src/CMakeFiles/sim.dir/flags.make
-src/CMakeFiles/sim.dir/Cube.cpp.o: ../src/Cube.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/sim.dir/Cube.cpp.o"
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/Cube.cpp.o -c /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Cube.cpp
-
-src/CMakeFiles/sim.dir/Cube.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sim.dir/Cube.cpp.i"
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Cube.cpp > CMakeFiles/sim.dir/Cube.cpp.i
-
-src/CMakeFiles/sim.dir/Cube.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sim.dir/Cube.cpp.s"
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Cube.cpp -o CMakeFiles/sim.dir/Cube.cpp.s
-
-src/CMakeFiles/sim.dir/Cube.cpp.o.requires:
-
-.PHONY : src/CMakeFiles/sim.dir/Cube.cpp.o.requires
-
-src/CMakeFiles/sim.dir/Cube.cpp.o.provides: src/CMakeFiles/sim.dir/Cube.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Cube.cpp.o.provides.build
-.PHONY : src/CMakeFiles/sim.dir/Cube.cpp.o.provides
-
-src/CMakeFiles/sim.dir/Cube.cpp.o.provides.build: src/CMakeFiles/sim.dir/Cube.cpp.o
-
-
 src/CMakeFiles/sim.dir/Particles.cpp.o: src/CMakeFiles/sim.dir/flags.make
 src/CMakeFiles/sim.dir/Particles.cpp.o: ../src/Particles.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/sim.dir/Particles.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/sim.dir/Particles.cpp.o"
 	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/Particles.cpp.o -c /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.cpp
 
 src/CMakeFiles/sim.dir/Particles.cpp.i: cmake_force
@@ -157,7 +133,6 @@ src/CMakeFiles/sim.dir/Particles.cpp.o.provides.build: src/CMakeFiles/sim.dir/Pa
 sim_OBJECTS = \
 "CMakeFiles/sim.dir/main.cpp.o" \
 "CMakeFiles/sim.dir/SolidSphere.cpp.o" \
-"CMakeFiles/sim.dir/Cube.cpp.o" \
 "CMakeFiles/sim.dir/Particles.cpp.o"
 
 # External object files for target sim
@@ -165,7 +140,6 @@ sim_EXTERNAL_OBJECTS =
 
 sim: src/CMakeFiles/sim.dir/main.cpp.o
 sim: src/CMakeFiles/sim.dir/SolidSphere.cpp.o
-sim: src/CMakeFiles/sim.dir/Cube.cpp.o
 sim: src/CMakeFiles/sim.dir/Particles.cpp.o
 sim: src/CMakeFiles/sim.dir/build.make
 sim: CGL/src/libCGL.a
@@ -174,7 +148,7 @@ sim: CGL/deps/glfw/src/libglfw3.a
 sim: /usr/local/lib/libfreetype.dylib
 sim: /usr/local/lib/libfreetype.dylib
 sim: src/CMakeFiles/sim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../sim"
 	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sim.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -184,7 +158,6 @@ src/CMakeFiles/sim.dir/build: sim
 
 src/CMakeFiles/sim.dir/requires: src/CMakeFiles/sim.dir/main.cpp.o.requires
 src/CMakeFiles/sim.dir/requires: src/CMakeFiles/sim.dir/SolidSphere.cpp.o.requires
-src/CMakeFiles/sim.dir/requires: src/CMakeFiles/sim.dir/Cube.cpp.o.requires
 src/CMakeFiles/sim.dir/requires: src/CMakeFiles/sim.dir/Particles.cpp.o.requires
 
 .PHONY : src/CMakeFiles/sim.dir/requires

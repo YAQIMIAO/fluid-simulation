@@ -59,6 +59,27 @@ Particles::Particles(double cube_length, double bound, int N, double d) {
 
 }
 
+void Particles::build_spatial_map() {
+    for (const auto &entry : map) {
+        delete(entry.second);
+    }
+
+    map.clear();
+
+    for (Particle &par: particles){
+        float hash_value = hash_position(par.p);
+        //cout<< "pm.position" <<pm.position<<endl;
+        //cout<<"hash_value:"<<hash_value<<endl;
+        if (map[hash_value] != NULL){
+            map[hash_value]->push_back(&par);
+        }else{
+            std::vector<Particle *> * vec = new std::vector<Particle *>();
+            vec->push_back(&par);
+            map[hash_value] = vec;
+        }
+    }
+
+}
 
 
 // http://stackoverflow.com/questions/5928725/hashing-2d-3d-and-nd-vectors
@@ -72,22 +93,18 @@ float hash_to_key(int x, int y, int z, int size){
 
 
 float Particles::hash_position(Vector3D pos) {
-    // TODO (Part 4): Hash a 3D position into a unique float identifier that represents
+
     // membership in some uniquely identified 3D box volume.
     float width = 2.0 * bound;
     float W = 3.0f * width / N;
-    // 0.06 * 0.06 * 0.06
-    float bucket_length_w = (5.0 * 1.5 * dt/(2.0 * width)) * W;
-    //float bucket_length_z = bucket_length_x;
 
-    //float x = (1.0 + floor(((pos.x/ width) * W) / bucket_length_x)) * bucket_length_x;
-    //float y = (1.0 + floor(((pos.y/ height) * H) / bucket_length_y)) * bucket_length_y;
-    //float z = (1.0 + floor(((pos.z/ (2.0/1000.0)) * T) / bucket_length_z))* bucket_length_z;
+    float bucket_length_w = (5.0 * 1.5 * dt/(2.0 * width)) * W;
+
 
     int x = (int)(floor(((pos.x/ width) * W) / bucket_length_w));
     int y = (int)(floor(((pos.y/ width) * W) / bucket_length_w));
     int z = (int)(floor(((pos.z/ width) * W) / bucket_length_w));
-    //float z = x;
+
     //cout<<pos<<endl;
     //cout<<x<<endl;
     //cout<<y<<endl;
@@ -97,8 +114,6 @@ float Particles::hash_position(Vector3D pos) {
 
     return hash_to_key(x, y, z, size);
 }
-
-
 
 
 

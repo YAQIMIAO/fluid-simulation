@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sim.dir/main.cpp.o"
   "CMakeFiles/sim.dir/SolidSphere.cpp.o"
-  "CMakeFiles/sim.dir/Cube.cpp.o"
   "CMakeFiles/sim.dir/Particles.cpp.o"
   "../sim.pdb"
   "../sim"

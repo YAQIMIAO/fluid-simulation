@@ -1747,9 +1747,6 @@
 		<Unit filename="/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug/CGL/deps/glfw/src/glfw_config.h">
 			<Option target="glfw"/>
 		</Unit>
-		<Unit filename="/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Cube.cpp">
-			<Option target="sim"/>
-		</Unit>
 		<Unit filename="/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.cpp">
 			<Option target="sim"/>
 		</Unit>

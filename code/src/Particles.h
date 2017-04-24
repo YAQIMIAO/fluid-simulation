@@ -17,6 +17,8 @@
 #include <glm/glm.hpp>
 #include <vector>
 #include <stdlib.h>
+#include <unordered_set>
+#include <unordered_map>
 #include <iostream>
 #if defined(__APPLE_CC__)
 #include <GLFW/glfw3.h>
@@ -62,7 +64,11 @@ public:
     float hash_position(Vector3D pos);
     void simulate(double frames_per_sec, double simulation_steps);// simulate one frame
     void self_collide(Particle &par, double simulation_steps);
+    void build_spatial_map();
+
     Vector3D g = Vector3D(0, -9.8, 0); // m per square s
+    unordered_map<float, vector<Particle *> *> map;
+
 
 
 };

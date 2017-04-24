@@ -169,33 +169,6 @@ sim/fast:
 	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/build
 .PHONY : sim/fast
 
-Cube.o: Cube.cpp.o
-
-.PHONY : Cube.o
-
-# target to build an object file
-Cube.cpp.o:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Cube.cpp.o
-.PHONY : Cube.cpp.o
-
-Cube.i: Cube.cpp.i
-
-.PHONY : Cube.i
-
-# target to preprocess a source file
-Cube.cpp.i:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Cube.cpp.i
-.PHONY : Cube.cpp.i
-
-Cube.s: Cube.cpp.s
-
-.PHONY : Cube.s
-
-# target to generate assembly for a file
-Cube.cpp.s:
-	cd /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/cmake-build-debug && $(MAKE) -f src/CMakeFiles/sim.dir/build.make src/CMakeFiles/sim.dir/Cube.cpp.s
-.PHONY : Cube.cpp.s
-
 Particles.o: Particles.cpp.o
 
 .PHONY : Particles.o
@@ -290,9 +263,6 @@ help:
 	@echo "... install"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... Cube.o"
-	@echo "... Cube.i"
-	@echo "... Cube.s"
 	@echo "... Particles.o"
 	@echo "... Particles.i"
 	@echo "... Particles.s"

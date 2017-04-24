@@ -788,6 +788,34 @@ detail/type_vec4.hpp
 detail/func_vector_relational.hpp
 ../glm/glm/detail/func_vector_relational.hpp
 
+/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.cpp
+Particles.h
+/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
+SolidSphere.cpp
+/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
+
+/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
+glm/glm.hpp
+-
+vector
+-
+stdlib.h
+-
+iostream
+-
+GLFW/glfw3.h
+-
+OpenGL/glu.h
+-
+GLUT/glut.h
+-
+GL/glut.h
+-
+math.h
+-
+CGL/vector3D.h
+-
+
 /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
 OpenGL/gl.h
 -
@@ -833,6 +861,8 @@ stdio.h
 -
 SolidSphere.cpp
 /Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/SolidSphere.cpp
+Particles.h
+/Users/Yimin/Dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src/Particles.h
 opencv2/opencv.hpp
 -
 
