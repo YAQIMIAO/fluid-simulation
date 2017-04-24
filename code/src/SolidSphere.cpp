@@ -24,11 +24,15 @@ protected:
 
 public:
     Vector3D position;
+    float r;
 
 
-    SolidSphere(Vector3D pos, float radius=0.2, unsigned int rings=24, unsigned int sectors=24)
+
+    SolidSphere(float radius=0.05, unsigned int rings=10, unsigned int sectors=10)
     {
-        position = pos;
+        r = radius;
+
+
         float const R = 1./(float)(rings-1);
         float const S = 1./(float)(sectors-1);
         int r, s;
@@ -66,11 +70,11 @@ public:
         }
     }
 
-    void draw()
+    void draw(float x, float y, float z)
     {
         glMatrixMode(GL_MODELVIEW);
         glPushMatrix();
-        glTranslatef(position.x, position.y, position.z);
+        glTranslatef(x, y, z);
 
         glEnableClientState(GL_VERTEX_ARRAY);
         glEnableClientState(GL_NORMAL_ARRAY);

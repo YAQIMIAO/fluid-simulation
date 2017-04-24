@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 2.8)
 # Application source
 set(APPLICATION_SOURCE
 
-    main.cpp SolidSphere.cpp)
+    main.cpp SolidSphere.cpp Cube.cpp Particles.cpp Particles.h)
 
 #-------------------------------------------------------------------------------
 # Set include directories

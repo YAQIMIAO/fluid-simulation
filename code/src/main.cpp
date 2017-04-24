@@ -28,8 +28,9 @@ using namespace CGL;
 #include <stdlib.h>
 #include <stdio.h>
 
-//#include "Particles.h"
+#include "Cube.cpp"
 #include "SolidSphere.cpp"
+#include "Particles.h"
 
 #if OUTPUT_ANIMATION
 #include <opencv2/opencv.hpp>
@@ -70,12 +71,7 @@ int frame = 0;
 const int render_step = 3;
 int mx, my;
 
-//Particles particles;
-
-
-//SolidSphere sphere1(2, 24, 48);
-Vector3D pos = Vector3D(1, 1, 1);
-SolidSphere sphere = SolidSphere(pos);
+Particles particles;
 
 
 
@@ -126,14 +122,10 @@ void display( GLFWwindow* window )
       //      0, 1, 0);
     
     // drawing start
-    //sphere.draw(1, 1, 1);
-    sphere.draw();
-    //sphere1.draw(2, 2, 2);
+
+    particles.render();
     
-    
-    //particles.render();
-    
-    //glPopMatrix();
+    glPopMatrix();
     
     glfwSwapBuffers(window);
     

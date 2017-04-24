@@ -12,6 +12,7 @@
  */
 
 #include "Particles.h"
+#include "SolidSphere.cpp"
 
 Particles::Particles() 
 {
@@ -60,7 +61,8 @@ void Particles::render() const
         
         glPushMatrix();
         glTranslatef(par.p.x, par.p.y, par.p.z);
-        //glutSolidSphere(0.05, 10, 10);
+        SolidSphere s = SolidSphere();
+        s.draw(par.p.x, par.p.y, par.p.z);
         glPopMatrix();
     }
     
