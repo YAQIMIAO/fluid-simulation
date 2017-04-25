@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glfw
+# Install script for directory: /Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/deps/glfw
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -28,13 +28,13 @@ if(NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glfw/include/GLFW" FILES_MATCHING REGEX "/glfw3\\.h$" REGEX "/glfw3native\\.h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/deps/glfw/include/GLFW" FILES_MATCHING REGEX "/glfw3\\.h$" REGEX "/glfw3native\\.h$")
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw" TYPE FILE FILES
-    "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/src/glfw3Config.cmake"
-    "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/src/glfw3ConfigVersion.cmake"
+    "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glfw/src/glfw3Config.cmake"
+    "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glfw/src/glfw3ConfigVersion.cmake"
     )
 endif()
 
@@ -42,7 +42,7 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMP
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw/glfwTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw/glfwTargets.cmake"
-         "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/CMakeFiles/Export/lib/cmake/glfw/glfwTargets.cmake")
+         "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glfw/CMakeFiles/Export/lib/cmake/glfw/glfwTargets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw/glfwTargets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -51,19 +51,19 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMP
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw" TYPE FILE FILES "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/CMakeFiles/Export/lib/cmake/glfw/glfwTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw" TYPE FILE FILES "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glfw/CMakeFiles/Export/lib/cmake/glfw/glfwTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw" TYPE FILE FILES "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/CMakeFiles/Export/lib/cmake/glfw/glfwTargets-noconfig.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glfw" TYPE FILE FILES "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glfw/CMakeFiles/Export/lib/cmake/glfw/glfwTargets-noconfig.cmake")
   endif()
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/src/glfw3.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glfw/src/glfw3.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glfw/src/cmake_install.cmake")
+  include("/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glfw/src/cmake_install.cmake")
 
 endif()
 

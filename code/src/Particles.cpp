@@ -176,39 +176,43 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
     double mass = pow(cube_length, 3) / pow(N, 3);
     double delta_t = 1.0f / frames_per_sec / simulation_steps;
 
-    // falling according to gravity
-    for (Particle &par: particles){
-        Vector3D v = g * delta_t;
-        par.v += v;
-        par.last_p = par.p;
-        par.p += v * dt;
+    for (int i = 0; i < simulation_steps; ++i)
+    {
+        // falling according to gravity
+        for (Particle &par: particles){
+            Vector3D v = g * delta_t;
+            par.v += v;
+            par.last_p = par.p;
+            par.p += v * dt;
 
+        }
+
+        // self-collision - so that particles don't fall onto each other
+        for (Particle &par: particles){
+            self_collide(par, simulation_steps);
+        }
+
+
+        // stop falling when hits the tank
+        for (Particle &par: particles){
+            if (par.p.x <= -bound){
+                par.p.x = -bound;
+            }
+            if (par.p.x >= bound){
+                par.p.x = bound;
+            }
+            if (par.p.y <= -bound){
+                par.p.y = -bound;
+            }
+            if (par.p.z <= -bound){
+                par.p.z = -bound;
+            }
+            if (par.p.z >= bound){
+                par.p.z = bound;
+            }
+        }
     }
 
-    // self-collision - so that particles don't fall onto each other
-    for (Particle &par: particles){
-        self_collide(par, simulation_steps);
-    }
-
-
-    // stop falling when hits the tank
-    for (Particle &par: particles){
-        if (par.p.x <= -bound){
-            par.p.x = -bound;
-        }
-        if (par.p.x >= bound){
-            par.p.x = bound;
-        }
-        if (par.p.y <= -bound){
-            par.p.y = -bound;
-        }
-        if (par.p.z <= -bound){
-            par.p.z = -bound;
-        }
-        if (par.p.z >= bound){
-            par.p.z = bound;
-        }
-    }
 }
 
 

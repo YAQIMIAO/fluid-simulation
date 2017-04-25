@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glew/src/glew.c" "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glew/CMakeFiles/glew.dir/src/glew.c.o"
-  "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glew/src/glewinfo.c" "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glew/CMakeFiles/glew.dir/src/glewinfo.c.o"
-  "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/deps/glew/src/visualinfo.c" "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/CGL/deps/glew/CMakeFiles/glew.dir/src/visualinfo.c.o"
+  "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/deps/glew/src/glew.c" "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glew/CMakeFiles/glew.dir/src/glew.c.o"
+  "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/deps/glew/src/glewinfo.c" "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glew/CMakeFiles/glew.dir/src/glewinfo.c.o"
+  "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/deps/glew/src/visualinfo.c" "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/CGL/deps/glew/CMakeFiles/glew.dir/src/visualinfo.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

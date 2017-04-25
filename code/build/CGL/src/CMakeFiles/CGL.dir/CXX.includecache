@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -220,15 +220,15 @@ GL/glext.h
 GL/glu.h
 -
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/base64.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/base64.cpp
 base64.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/base64.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/base64.h
 iostream
 -
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/color.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/color.cpp
 color.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/color.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/color.h
 stdio.h
 -
 string.h
@@ -238,13 +238,13 @@ ostream
 sstream
 -
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/complex.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/complex.cpp
 complex.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/complex.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/complex.h
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/lodepng.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/lodepng.cpp
 lodepng.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/lodepng.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/lodepng.h
 stdio.h
 -
 stdlib.h
@@ -252,41 +252,41 @@ stdlib.h
 fstream
 -
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/matrix3x3.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/matrix3x3.cpp
 matrix3x3.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/matrix3x3.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/matrix3x3.h
 iostream
 -
 cmath
 -
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/matrix4x4.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/matrix4x4.cpp
 matrix4x4.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/matrix4x4.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/matrix4x4.h
 iostream
 -
 cmath
 -
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/osdtext.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/osdtext.cpp
 osdtext.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/osdtext.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/osdtext.h
 iostream
 -
 ft2build.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/ft2build.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/ft2build.h
 base64.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/base64.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/base64.h
 console.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/console.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/console.h
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/quaternion.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/quaternion.cpp
 quaternion.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/quaternion.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/quaternion.h
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/spectrum.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/spectrum.cpp
 spectrum.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/spectrum.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/spectrum.h
 stdio.h
 -
 string.h
@@ -296,9 +296,9 @@ ostream
 sstream
 -
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/tinyxml2.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/tinyxml2.cpp
 tinyxml2.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/tinyxml2.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/tinyxml2.h
 new
 -
 stddef.h
@@ -306,21 +306,21 @@ stddef.h
 cstddef
 -
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/vector2D.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/vector2D.cpp
 vector2D.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/vector2D.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/vector2D.h
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/vector3D.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/vector3D.cpp
 vector3D.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/vector3D.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/vector3D.h
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/vector4D.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/vector4D.cpp
 vector4D.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/vector4D.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/vector4D.h
 
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/viewer.cpp
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/viewer.cpp
 viewer.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/viewer.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/viewer.h
 stdio.h
 -
 cmath
@@ -332,9 +332,9 @@ iostream
 algorithm
 -
 GL/glew.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/GL/glew.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/GL/glew.h
 console.h
-/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/CGL/src/console.h
+/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/CGL/src/console.h
 
 /usr/local/include/freetype2/freetype/config/ftheader.h
 

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/src
+# Install script for directory: /Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,18 +29,18 @@ endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/sim")
+   "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/sim")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code" TYPE EXECUTABLE FILES "/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/build/sim")
-  if(EXISTS "$ENV{DESTDIR}/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/sim" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/sim")
+file(INSTALL DESTINATION "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code" TYPE EXECUTABLE FILES "/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/build/sim")
+  if(EXISTS "$ENV{DESTDIR}/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/sim" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/sim")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" "$ENV{DESTDIR}/Users/Yimin/dropbox/2017spring/cs184/final_proj/fluid-simulation/code/sim")
+      execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" "$ENV{DESTDIR}/Users/yaqi/Academic/CS/184/hw/fluid-simulation/code/sim")
     endif()
   endif()
 endif()
