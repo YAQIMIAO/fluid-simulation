@@ -41,6 +41,7 @@ Particles::Particles()
             }
         }
     }
+    this->thickness = (particles[0].p - particles[1].p).norm();
 }
 
 Particles::Particles(double cube_length, double bound, int N, double d, double h) {
@@ -63,6 +64,7 @@ Particles::Particles(double cube_length, double bound, int N, double d, double h
             }
         }
     }
+    this->thickness = (particles[0].p - particles[1].p).norm();
 
 }
 
@@ -81,7 +83,6 @@ void Particles::build_spatial_map() {
 
     for (Particle &par: particles){
         float hash_value = hash_position(par.p);
-        //cout<< "pm.position" <<pm.position<<endl;
         //cout<<"hash_value:"<<hash_value<<endl;
         if (map[hash_value] != NULL){
             map[hash_value]->push_back(&par);
@@ -91,6 +92,7 @@ void Particles::build_spatial_map() {
             map[hash_value] = vec;
         }
     }
+    //cout<<map.size()<<endl;
 
 }
 
@@ -106,23 +108,39 @@ float hash_to_key(int x, int y, int z, int size){
 
 
 float Particles::hash_position(Vector3D pos) {
+    double max_y = -bound;
+    double min_y = bound;
+
+    for (Particle &par: particles){
+        if (par.p.y > max_y){
+            max_y = par.p.y;
+        }
+        if (par.p.y < min_y){
+            min_y = par.p.y;
+        }
+    }
 
     // membership in some uniquely identified 3D box volume.
     float width = 2.0 * bound;
     float W = 3.0f * width / N;
+    float height = (floor((max_y - min_y) * 100.0) + 1.0)/100.0;
+    float H = 3.0f * height / N;
+    //cout<<"W:"<<W<<endl;
+    //cout<<"H:"<<H<<endl;
 
-    float bucket_length_w = (5.0 * 1.5 * 0.3/(2.0 * width)) * W;
+    float bucket_length_w = W;
+    float bucket_length_h = H;
 
 
     int x = (int)(floor(((pos.x/ width) * W) / bucket_length_w));
-    int y = (int)(floor(((pos.y/ width) * W) / bucket_length_w));
+    int y = (int)(floor(((pos.y/ height) * H) / bucket_length_h));
     int z = (int)(floor(((pos.z/ width) * W) / bucket_length_w));
 
     //cout<<pos<<endl;
     //cout<<x<<endl;
     //cout<<y<<endl;
     //cout<<z<<endl;
-    int size = (int)floor((W * W * W) / (bucket_length_w * bucket_length_w * bucket_length_w));
+    int size = (int)floor((W * H * W) / (bucket_length_w * bucket_length_h * bucket_length_w));
 
 
     return hash_to_key(x, y, z, size);
@@ -135,30 +153,33 @@ float Particles::hash_position(Vector3D pos) {
 
 
 void Particles::self_collide(Particle &par, double simulation_steps) {
-    // TODO: need to define a thickness value
-    double thickness = 0.1;
-
     float hash_value = hash_position(par.p);
     //TODO:
 
 
 
     if (map[hash_value] != NULL && map[hash_value]->size() > 1) {
-        cout<<"box with more than 1 item detected!"<<endl;
-        cout<<"box size: " <<map[hash_value]->size()<<endl;
+        //cout<<"box with more than 1 item detected!"<<endl;
+        //cout<<"box size: " <<map[hash_value]->size()<<endl;
         Vector3D correctionVs = Vector3D(0.0, 0.0, 0.0);
         int count = 0;
         for (Particle *particle: *(map[hash_value])){
             if (particle != &par){
-                if ((particle->p - par.p).norm() < 2.0 * thickness){
+                if ((particle->p - par.p).norm() < thickness){
+                    double eta1 = (-1.0/1000.0) + ((double)rand()/(double) RAND_MAX) * (2.0 / 1000.0);
+                    eta1 = clamp(eta1, -1.0/1000.0, 1.0/1000.0);
+                    double eta2 = (-1.0/1000.0) + ((double)rand()/(double) RAND_MAX) * (2.0 / 1000.0);
+                    eta2 = clamp(eta2, -1.0/1000.0, 1.0/1000.0);
+
                     Vector3D d = (par.last_p - particle->p).unit();
-                    Vector3D new_p = particle->p + d * 2.0 * thickness;
+                    Vector3D new_p = particle->p + d * thickness;
                     Vector3D correctionV = new_p - par.p;
+                    correctionV.x += eta1;
+                    correctionV.z += eta2;
                     correctionVs += correctionV;
                     count++;
                 }
             }
-
         }
         if (count != 0){
             Vector3D finalCorrectionV = (correctionVs / (double) count) / simulation_steps;
@@ -171,7 +192,6 @@ void Particles::self_collide(Particle &par, double simulation_steps) {
 
 void Particles::simulate(double frames_per_sec, double simulation_steps){
     // before simulate: build the spatial map
-    build_spatial_map();
 
     double mass = pow(cube_length, 3) / pow(N, 3);
     double delta_t = 1.0f / frames_per_sec / simulation_steps;
@@ -179,13 +199,13 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
     // falling according to gravity
     for (Particle &par: particles){
         Vector3D v = g * delta_t;
-        par.v += v;
+        Vector3D last = par.last_p;
         par.last_p = par.p;
-        par.p += v * dt;
-
+        par.p = last + v * delta_t;
     }
 
     // self-collision - so that particles don't fall onto each other
+    build_spatial_map();
     for (Particle &par: particles){
         self_collide(par, simulation_steps);
     }

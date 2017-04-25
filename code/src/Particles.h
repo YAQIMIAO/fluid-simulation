@@ -60,9 +60,11 @@ public:
     // properties
     double cube_length;
     double bound; // (- bound, - bound, - bound) to (bound, bound, bound)
+
     int N; // number of particles per side
     double dt;
     double initial_height;
+    double thickness; // the initial distance between particles
 
     Particles();
     Particles(double cube_length, double bound, int N, double d, double h);
