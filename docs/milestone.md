@@ -37,5 +37,6 @@ We implemented the simulation of fluid dynamics with particles. Within our simul
 
 ## Updated work plan
 This week (4/25~4/28) must fix all the most priority bugs.
+
 Next week (4/29-5/5) try to do as much as we can in the items that needs to be added.
 
