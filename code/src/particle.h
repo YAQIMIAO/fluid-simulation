@@ -8,8 +8,6 @@ using namespace CGL;
 struct Particle
 {
 public:
-	virtual void render(GLShader &shader) = 0;
- 	virtual void collide(PointMass &pm) = 0;
 	Particle(const Vector3D &position)
 		: start_position(position), position(position), last_position(position) {}
 	Vector3D velocity(double delta_t) {

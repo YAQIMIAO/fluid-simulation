@@ -3,6 +3,7 @@
 #include "CGL/CGL.h"
 #include "CGL/misc.h"
 #include "particle.h"
+#include "collision/collisionObject.h"
 
 using namespace CGL;
 using namespace std;
@@ -11,7 +12,7 @@ struct Fluid
 {
 	Fluid() {}
 	Fluid(double side_leng, int num_side_points, double density);
-	~Fluid() {};
+	~Fluid();
 
 	void initCube(double side_leng, int num_side_points, double density);
 	void simulate(double delta_t, double simulation_steps,
@@ -22,5 +23,6 @@ struct Fluid
 	void self_collide(Particle &p, double delta_t);
 
 	std::vector<Particle> particles;
-
+	double side_leng;
+	int num_side_points;
 };

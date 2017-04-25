@@ -4,9 +4,10 @@ project(FluidSimulator)
 #-------------------------------------------------------------------------------
 # Build options
 #-------------------------------------------------------------------------------
-option(BUILD_LIBCGL "Build with libCGL"         ON)
+option(BUILD_LIBCGL    "Build with libCGL"            ON)
 option(BUILD_DEBUG     "Build with debug settings"    ON)
 option(BUILD_DOCS      "Build documentation"          OFF)
+option(ENABLE_TESTS    "Enable testing"               OFF)
 
 #-------------------------------------------------------------------------------
 # Platform-specific settings
@@ -73,6 +74,8 @@ if(LINUX)
   if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 
     set(GCC_CXX_FLAGS "-std=gnu++11 -m64")
+    set(GCC_CXX_FLAGS "${GCC_CXX_FLAGS} -Wno-deprecated-declarations")
+    set(GCC_CXX_FLAGS "${GCC_CXX_FLAGS} -Wno-misleading-indentation")
 
     # X11 Dependencies
     if(NOT BUILD_LIBCGL)
@@ -170,8 +173,6 @@ if(BUILD_LIBCGL)
   include_directories(CGL/include)
 else(BUILD_LIBCGL)
   find_package(CGL REQUIRED)
-  find_package(GLEW REQUIRED)
-  find_package(GLFW REQUIRED)
 endif(BUILD_LIBCGL)
 
 #-------------------------------------------------------------------------------
@@ -189,3 +190,11 @@ endif()
 
 # Install settings
 set(CMAKE_INSTALL_PREFIX "${FluidSimulator_SOURCE_DIR}/")
+
+# Test settings
+
+if(ENABLE_TESTS)
+  include_directories(${CATCH_INCLUDE_DIR} ${COMMON_INCLUDES})
+  enable_testing(true)
+  add_subdirectory(test)
+endif()

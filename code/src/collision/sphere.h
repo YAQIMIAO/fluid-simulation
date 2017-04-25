@@ -1,8 +1,8 @@
 #ifndef COLLISIONOBJECT_SPHERE_H
 #define COLLISIONOBJECT_SPHERE_H
 
-#include "../clothMesh.h"
 #include "collisionObject.h"
+#include "../particle.h"
 
 using namespace CGL;
 using namespace std;
@@ -14,7 +14,7 @@ public:
         friction(friction) {}
 
   void render(GLShader &shader);
-  void collide(PointMass &pm);
+  void collide(Particle &p);
 
 private:
   Vector3D origin;

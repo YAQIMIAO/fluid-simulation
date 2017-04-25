@@ -3,36 +3,52 @@ cmake_minimum_required(VERSION 2.8)
 # Application source
 set(APPLICATION_SOURCE
 
+    fluid.cpp
+
     # Collision objects
     collision/sphere.cpp
     collision/plane.cpp
 
-    fluid.cpp
-
     # Application
     simulator.cpp
     main.cpp
+
+    # Miscellaneous
+    # png.cpp
+    misc/sphere_drawing.cpp
 
     # Camera
     camera.cpp
 )
 
 #-------------------------------------------------------------------------------
+# Embed resources
+#-------------------------------------------------------------------------------
+
+# embed_resources(FLUIDSIMULATOR_SHADERS
+#   shaders/vert.glsl
+#   shaders/normalFrag.glsl
+#   shaders/wireframeFrag.glsl
+# )
+
+#-------------------------------------------------------------------------------
+# Set definitions
+#-------------------------------------------------------------------------------
+add_definitions(${NANOGUI_EXTRA_DEFS})
+
+#-------------------------------------------------------------------------------
 # Set include directories
 #-------------------------------------------------------------------------------
 include_directories(
-  ${GLEW_INCLUDE_DIRS}
-  ${GLFW_INCLUDE_DIRS}
   ${CGL_INCLUDE_DIRS}
   ${FREETYPE_INCLUDE_DIRS}
+  ${NANOGUI_EXTRA_INCS}
 )
 
 #-------------------------------------------------------------------------------
 # Set link directories
 #-------------------------------------------------------------------------------
 link_directories(
-  ${GLEW_LIBRARY_DIRS}
-  ${GLFW_LIBRARY_DIRS}
   ${CGL_LIBRARY_DIRS}
   ${FREETYPE_LIBRARY_DIRS}
 )
@@ -40,13 +56,11 @@ link_directories(
 #-------------------------------------------------------------------------------
 # Add executable
 #-------------------------------------------------------------------------------
-add_executable(fluid-simulator ${APPLICATION_SOURCE})
+add_executable(fluidsimulator ${APPLICATION_SOURCE})
 
-target_link_libraries( fluid-simulator
+target_link_libraries(fluidsimulator
     CGL ${CGL_LIBRARIES}
-    glew ${GLEW_LIBRARIES}
-    glfw ${GLFW_LIBRARIES}
-    ${OPENGL_LIBRARIES}
+    nanogui ${NANOGUI_EXTRA_LIBS}
     ${FREETYPE_LIBRARIES}
     ${CMAKE_THREADS_INIT}
 )
@@ -55,7 +69,7 @@ target_link_libraries( fluid-simulator
 # Platform-specific configurations for target
 #-------------------------------------------------------------------------------
 if(APPLE)
-  set_property( TARGET fluid-simulator APPEND_STRING PROPERTY COMPILE_FLAGS
+  set_property( TARGET fluidsimulator APPEND_STRING PROPERTY COMPILE_FLAGS
                 "-Wno-deprecated-declarations -Wno-c++11-extensions")
 endif(APPLE)
 
@@ -63,4 +77,4 @@ endif(APPLE)
 set(EXECUTABLE_OUTPUT_PATH ..)
 
 # Install to project root
-install(TARGETS fluid-simulator DESTINATION ${FluidSimulator_SOURCE_DIR})
+install(TARGETS fluidsimulator DESTINATION ${FluidSimulator_SOURCE_DIR})

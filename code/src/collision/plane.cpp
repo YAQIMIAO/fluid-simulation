@@ -1,8 +1,7 @@
 #include "iostream"
 #include <nanogui/nanogui.h>
 
-#include "../clothMesh.h"
-#include "../clothSimulator.h"
+#include "../simulator.h"
 #include "plane.h"
 
 using namespace std;
@@ -10,22 +9,22 @@ using namespace CGL;
 
 #define SURFACE_OFFSET 0.0001
 
-void Plane::collide(PointMass &pm) {
+void Plane::collide(Particle &p) {
   // TODO (Part 3): Handle collisions with planes.
-  if (dot(pm.last_position - this->point, this->normal) * dot(pm.position - this->point, this->normal) > 0) {
-    return;
-  }
-  Vector3D tan_point = pm.position - dot(pm.position - this->point, this->normal) * this->normal;
-  float cos_theta = dot(pm.last_position - this->point, this->normal);
-  Vector3D normal_side = this->normal;
-  if (cos_theta < 0) {
-    normal_side = -1.f * this->normal;
-  } else if (cos_theta == 0) {
-    pm.position = tan_point;
-    return;
-  }
-  Vector3D correction = tan_point + SURFACE_OFFSET * normal_side  - pm.last_position;
-  pm.position = pm.last_position + (1.f - friction) * correction;
+  // if (dot(pm.last_position - this->point, this->normal) * dot(pm.position - this->point, this->normal) > 0) {
+  //   return;
+  // }
+  // Vector3D tan_point = pm.position - dot(pm.position - this->point, this->normal) * this->normal;
+  // float cos_theta = dot(pm.last_position - this->point, this->normal);
+  // Vector3D normal_side = this->normal;
+  // if (cos_theta < 0) {
+  //   normal_side = -1.f * this->normal;
+  // } else if (cos_theta == 0) {
+  //   pm.position = tan_point;
+  //   return;
+  // }
+  // Vector3D correction = tan_point + SURFACE_OFFSET * normal_side  - pm.last_position;
+  // pm.position = pm.last_position + (1.f - friction) * correction;
 }
 
 void Plane::render(GLShader &shader) {
