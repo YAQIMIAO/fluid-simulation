@@ -40,3 +40,10 @@ This week (4/25~4/28) must fix all the most priority bugs.
 
 Next week (4/29-5/5) try to do as much as we can in the items that needs to be added.
 
+## Video link
+https://drive.google.com/file/d/0B1Qacbi87D4WMi1PN1oxQnJleDA/view?usp=sharing
+
+## Slides
+https://docs.google.com/presentation/d/1L3AqJCubJB-bNyg07EO5UAhymmV_3D9ouPPONYSxG0A/edit?usp=sharing
+
+
