@@ -1,6 +1,9 @@
 # OS
 .DS_Store
 
+# Build directory
+code/build
+
 # Compiled Object files
 *.slo
 *.lo

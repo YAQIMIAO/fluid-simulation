@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   Particles.h
  * Author: swl
  *
@@ -34,9 +34,9 @@ using namespace std;
 using namespace CGL;
 
 class Particles {
-
-
-
+    
+    
+    
 private:
     struct Particle
     {
@@ -46,37 +46,37 @@ private:
         double lamda;
         vector<int> neighbor_keys;
         vector<Particle *> neighbors;
-
-
+        
+        
     };
-
-
+    
+    
     // components
     vector<Particle> particles;
-
+    
     // spatial map
     unordered_map<int, vector<Particle *> *> map;
-
+    
     // gravity
     Vector3D g = Vector3D(0, -9.8, 0); // m per square s
-
-
+    
+    
 public:
     // properties
     double ETA = 0.000001; //relaxing factor
-
+    
     double cube_length;
     double bound; // bounding box - (- bound, - bound, - bound) to (bound, bound, bound)
-
+    
     int N; // number of particles per side
-
+    
     double d;
     double h;
-
+    
     double initial_height;
-
+    
     double rho_0; // initial density
-
+    
     Particles();
     Particles(double cube_length, double bound, int N, double d, double h);
     void render() const;
@@ -84,15 +84,16 @@ public:
     void simulate(double frames_per_sec, double simulation_steps);// simulate one frame
     void find_neighbors(Particle &par);
     void print_out_self_and_neighbor(Particle *par);
-
+    
     Vector3D find_min();
     Vector3D find_max();
-
+    
     void build_spatial_map();
-
+    
     vector<int> neighbor_hash(Vector3D pos);
-
+    
 };
 
 #endif /* PARTICLES_H */
+
 
