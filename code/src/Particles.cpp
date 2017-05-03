@@ -22,11 +22,10 @@
 Particles::Particles() 
 {
     this->cube_length = 1.0;
-    this->bound = 1.0 - 0.05;
+    this->bound = 1.0;
     this->N = 10;
-    this->dt = 0.1;
     this->initial_height = 10.0;
-    float d = 0.1;
+    this->d = 0.1;
     for(int x=0; x<N; x++)
     {
         for(int y=0; y<N; y++)
@@ -43,11 +42,11 @@ Particles::Particles()
     }
 }
 
-Particles::Particles(double cube_length, double bound, int N, double d, double h) {
+Particles::Particles(double cube_length, double bound, int N, double dist, double h) {
     this->cube_length = cube_length;
-    this->bound = bound - 0.05;
+    this->bound = bound;
     this->N = N;
-    this->dt = d;
+    this->d = dist;
     this->initial_height = h;
     for(int x=0; x<N; x++)
     {
@@ -80,12 +79,22 @@ void Particles::build_spatial_map() {
     map.clear();
 
     for (Particle &par: particles){
-        float hash_value = hash_position(par.p);
-        //cout<< "pm.position" <<pm.position<<endl;
+        //cout<<par.p<<endl;
+        int hash_value = hash_position(par.p);
         //cout<<"hash_value:"<<hash_value<<endl;
+
+        par.neighbor_keys = neighbor_hash(par.p);
+        par.neighbors = vector<Particle *>();
+        //cout<<par.neighbors.size()<<endl;
+        //cout<<"neighbor_keys.size():"<<par.neighbor_keys.size()<<endl;
+
+        //cout<<"hash_value:"<<hash_value<<endl;
+
         if (map[hash_value] != NULL){
+            //cout<<"there is already a particle in this box"<<endl;
             map[hash_value]->push_back(&par);
         }else{
+            //cout<<"there is no particle in this box"<<endl;
             std::vector<Particle *> * vec = new std::vector<Particle *>();
             vec->push_back(&par);
             map[hash_value] = vec;
@@ -95,121 +104,362 @@ void Particles::build_spatial_map() {
 }
 
 
-// http://stackoverflow.com/questions/5928725/hashing-2d-3d-and-nd-vectors
-// hash(x,y,z) = ( x p1 xor y p2 xor z p3) mod n
-float hash_to_key(int x, int y, int z, int size){
-    int p1 = 73856093;
-    int p2 = 19349663;
-    int p3 = 83492791;
-    return ( (x * p1) xor (y * p2) xor (z * p3)) % size;
+Vector3D Particles::find_min(){
+    Vector3D min = Vector3D(999999, 999999, 999999);
+    for (Particle &par: particles) {
+        if (par.p.x < min.x){
+            min.x = par.p.x;
+        }
+        if (par.p.y < min.y){
+            min.y = par.p.y;
+        }
+        if (par.p.z < min.z){
+            min.z = par.p.z;
+        }
+    }
+    return min;
+}
+
+Vector3D Particles::find_max(){
+    Vector3D max = Vector3D(-999999, -999999, -999999);
+    for (Particle &par: particles) {
+        if (par.p.x > max.x){
+            max.x = par.p.x;
+        }
+        if (par.p.y > max.y){
+            max.y = par.p.y;
+        }
+        if (par.p.z > max.z){
+            max.z = par.p.z;
+        }
+    }
+    return max;
+}
+
+int hash_to_key(int x, int y, int z, int N){
+    if (x >= 0 && y >= 0 && z>= 0 && x < N && y < N && z < N){
+        int ret = (x) + (y) * N + (z) * N * N;
+        //cout<<ret<<endl;
+        return ret;
+    }else{
+        return -1;
+
+    }
+}
+
+int Particles::hash_position(Vector3D pos) {
+    // h is the bucket length
+    h = d * 1.25;
+
+    // min is - bound; max is bound
+    // X is how many bucket on each side
+    int X = 2 * bound / h;
+    //cout<<"X:"<<X<<endl;
+
+    // assign (x, y, z)
+    int x = (int)floor((pos.x + bound)/ h) - 1;
+    int y = (int)floor((pos.y + bound)/ h) - 1;
+    int z = (int)floor((pos.z + bound)/ h) - 1;
+
+    //cout<<"hashkey is:"<<"("<<x<<","<<y<<","<<z<<")"<<endl;
+    int key = hash_to_key(x, y, z, X);
+    //cout<<"key is:"<<key<<endl;
+
+    return key;
 }
 
 
-float Particles::hash_position(Vector3D pos) {
 
-    // membership in some uniquely identified 3D box volume.
-    float width = 2.0 * bound;
-    float W = 3.0f * width / N;
-
-    float bucket_length_w = (5.0 * 1.5 * 0.3/(2.0 * width)) * W;
-
-
-    int x = (int)(floor(((pos.x/ width) * W) / bucket_length_w));
-    int y = (int)(floor(((pos.y/ width) * W) / bucket_length_w));
-    int z = (int)(floor(((pos.z/ width) * W) / bucket_length_w));
-
-    //cout<<pos<<endl;
-    //cout<<x<<endl;
-    //cout<<y<<endl;
-    //cout<<z<<endl;
-    int size = (int)floor((W * W * W) / (bucket_length_w * bucket_length_w * bucket_length_w));
-
-
-    return hash_to_key(x, y, z, size);
+void push_back_valid_hash(vector<int> *ret, int hash){
+    if (hash >= 0){
+        ret->push_back(hash);
+    }
 }
+
+
+vector<int> Particles::neighbor_hash(Vector3D pos) {
+    vector<int> ret = vector<int>();
+    // min is - bound; max is bound
+    // X is how many bucket on each side
+    int X = 2 * bound / h;
+    //cout<<"X:"<<X<<endl;
+
+    // assign (x, y, z)
+    int x = (int)floor((pos.x + bound)/ h) - 1;
+    int y = (int)floor((pos.y + bound)/ h) - 1;
+    int z = (int)floor((pos.z + bound)/ h) - 1;
+
+
+    //cout<<"("<<x<<", "<<y<<", "<< z<<")"<<endl;
+    int size = X;
+
+    // 26 neighbors
+
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y, z, size));
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y, z + 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y - 1, z, size));
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y - 1, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y - 1, z + 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y + 1, z, size));
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y + 1, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x - 1, y + 1, z + 1, size));
+
+    // ret.push_back(hash_to_key(x, y, z, size));
+    push_back_valid_hash(&ret, hash_to_key(x, y, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x, y, z + 1, size));//
+    push_back_valid_hash(&ret, hash_to_key(x, y - 1, z, size));
+    push_back_valid_hash(&ret, hash_to_key(x, y - 1, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x, y - 1, z + 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x, y + 1, z, size));//
+    push_back_valid_hash(&ret, hash_to_key(x, y + 1, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x, y + 1, z + 1, size));//
+
+
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y, z, size));//
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y, z + 1, size));//
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y - 1, z, size));
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y - 1, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y - 1, z + 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y + 1, z, size));//
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y + 1, z - 1, size));
+    push_back_valid_hash(&ret, hash_to_key(x + 1, y + 1, z + 1, size));//
+    //cout<<hash_to_key(x + 1, y + 1, z + 1, size)<<endl;
+
+
+    return ret;
+}
+
+
 
 
 //****************************************************
-// Handling self-collision
+// Find particles that's within h distance away
 //***************************************************
 
 
-void Particles::self_collide(Particle &par, double simulation_steps) {
-    // TODO: need to define a thickness value
-    double thickness = 0.1;
+void Particles::find_neighbors(Particle &par){
+    par.neighbors = vector<Particle *>();
+    int self_hash = hash_position(par.p);
 
-    float hash_value = hash_position(par.p);
-    //TODO:
-
-
-
-    if (map[hash_value] != NULL && map[hash_value]->size() > 1) {
-        cout<<"box with more than 1 item detected!"<<endl;
-        cout<<"box size: " <<map[hash_value]->size()<<endl;
-        Vector3D correctionVs = Vector3D(0.0, 0.0, 0.0);
-        int count = 0;
-        for (Particle *particle: *(map[hash_value])){
+    // 1. is there any close particles in my box that is within h distance away?
+    if (map[self_hash] != NULL && map[self_hash]->size() > 1) {
+        for (Particle *particle: *(map[self_hash])){
             if (particle != &par){
-                if ((particle->p - par.p).norm() < 2.0 * thickness){
-                    Vector3D d = (par.last_p - particle->p).unit();
-                    Vector3D new_p = particle->p + d * 2.0 * thickness;
-                    Vector3D correctionV = new_p - par.p;
-                    correctionVs += correctionV;
-                    count++;
+                double diff = (particle->p - par.p).norm();
+                if (diff < h){
+                    //cout<<"found neighbor in self bin"<<endl;
+                    par.neighbors.push_back(particle);
                 }
             }
-
         }
-        if (count != 0){
-            Vector3D finalCorrectionV = (correctionVs / (double) count) / simulation_steps;
-            par.p += finalCorrectionV;
-        }
+    }
 
+
+    // 2. check at most 26 neighbor bins
+    for (int key: par.neighbor_keys){
+        if (map[key] != NULL) {
+            for (Particle *particle: *(map[key])){
+                double diff = (particle->p - par.p).norm();
+                if (diff < h){
+                    //cout<<"found neighbor in neighbor bins"<<endl;
+                    par.neighbors.push_back(particle);
+                }
+            }
+        }
+    }
+
+    //cout<<"how many neighbors? "<<par.neighbors.size()<<endl;
+
+
+}
+
+
+void Particles::print_out_self_and_neighbor(Particle *par){
+    cout<<"self key is:"<<hash_position(par->p)<<endl;
+    cout<<"self position is:"<<par->p<<endl;
+    cout<<"neighbors num:"<<(par->neighbors).size()<<endl;
+    cout<<"neighbors are:"<<endl;
+    for (Particle *neighbor: par->neighbors){
+        Vector3D pos = neighbor->p;
+        cout<<"position: "<<pos<<endl;
     }
 
 }
 
+double poly_6(double d, double h){
+    if (d >= 0 && d <= h){
+        return (315.0f / (64.0f * PI * pow(h, 9))) * pow((h * h - d * d), 3);
+    }else{
+        return 0.0;
+    }
+}
+
+double spiky(double d, double h){
+    if (d >= 0 && d <= h){
+        return (15.0f / (PI * pow(h, 6))) * pow((h - d), 3);
+    }else{
+        return 0.0;
+    }
+
+
+}
+
+// k = i
+Vector3D gradient_spiky_pi(Vector3D pi, Vector3D pj, double h){
+    double x, y, z, r, constant;
+    r = (pi - pj).norm();
+    constant = (-45.0f/(PI * pow(h, 6))) * (h - r) * (h - r) * pow(r, -1.0/2.0);
+
+    x = constant * (pi.x - pj.x);
+    y = constant * (pi.y - pj.y);
+    z = constant * (pi.z - pj.z);
+    return Vector3D(x, y, z);
+}
+
+// k = j
+Vector3D gradient_spiky_pj(Vector3D pi, Vector3D pj, double h){
+    double x, y, z, r, constant;
+    r = (pi - pj).norm();
+    constant = (45.0f/(PI * pow(h, 6))) * (h - r) * (h - r) * pow(r, -1.0/2.0);
+
+    x = constant * (pi.x - pj.x);
+    y = constant * (pi.y - pj.y);
+    z = constant * (pi.z - pj.z);
+    return Vector3D(x, y, z);
+}
+
+
+// p_i is the density of i-th particle, p_0 is the rest density
+double C_i(double rho_i, double rho_0){
+    return rho_i / rho_0  - 1.0;
+}
+
+
 void Particles::simulate(double frames_per_sec, double simulation_steps){
     // before simulate: build the spatial map
-    build_spatial_map();
 
-    double mass = pow(cube_length, 3) / pow(N, 3);
     double delta_t = 1.0f / frames_per_sec / simulation_steps;
 
-    for (int i = 0; i < simulation_steps; ++i)
-    {
-        // falling according to gravity
-        for (Particle &par: particles){
-            Vector3D v = g * delta_t;
-            par.v += v;
-            par.last_p = par.p;
-            par.p += v * dt;
+    // falling according to gravity
+    for (Particle &par: particles){
+        Vector3D v = g * delta_t;
+        par.v += v;
 
+        Vector3D last = par.last_p;
+        par.last_p = par.p;
+
+        // this is the predicted position
+        par.p = last + v * delta_t;
+        //cout<<par.p<<endl;
+    }
+
+
+    build_spatial_map();
+
+    // find neighbor particles
+    for (Particle &par: particles){
+        find_neighbors(par);
+        //print_out_self_and_neighbor(&par);
+    }
+
+
+
+
+
+    // Incompressibility
+    /*   TODO: currently not working
+     *   while iter < solverIterations do
+          for all particles i do
+            calculate λ_i
+          end for
+          for all particles i do
+            calculate ∆p_i
+            perform boundary and response
+          end for
+          for all particles i do
+            update position x*_i ⇐ x*_i + ∆p_i
+          end for
+        end while
+     */
+
+    double rho_0 = 150.0; // manually determined for now
+
+
+    for (Particle &par: particles) {
+        // get current particle's density - rho_i
+        double rho_i = 0.0;
+        double divider = 0.0;
+
+        Vector3D gradient_for_pi = Vector3D();
+
+        par.gradient_sum = Vector3D();
+
+        for (Particle *n: par.neighbors) {
+            rho_i += poly_6((par.p - n->p).norm(), h); // Poly6 kernel
+
+            Vector3D grad_i = gradient_spiky_pi(par.p, n->p, h);
+            gradient_for_pi += grad_i;
+
+
+            Vector3D grad_j = gradient_spiky_pj(par.p, n->p, h);
+            par.gradient_sum += grad_j;
+
+
+            grad_j *= (-1.0 / rho_0);
+
+            divider += dot(grad_j, grad_j);
         }
 
-        // self-collision - so that particles don't fall onto each other
-        for (Particle &par: particles){
-            self_collide(par, simulation_steps);
+        //cout << "rho_i:" << rho_i << endl;
+        par.gradient_sum += gradient_for_pi;
+        gradient_for_pi *= (1.0 / rho_0);
+        divider += dot(gradient_for_pi, gradient_for_pi);
+        par.lamda = -(C_i(rho_i, rho_0)) / (divider);
+    }
+
+    for (Particle &par: particles) {
+        Vector3D sum = Vector3D();
+        for (Particle *n: par.neighbors) {
+            sum += (par.lamda + n->lamda) * par.gradient_sum;
         }
+        Vector3D delta_p = sum / rho_0;
+        //cout<<delta_p<<endl;
+        par.p += delta_p;
+    }
 
 
-        // stop falling when hits the tank
-        for (Particle &par: particles){
-            if (par.p.x <= -bound){
-                par.p.x = -bound;
-            }
-            if (par.p.x >= bound){
-                par.p.x = bound;
-            }
-            if (par.p.y <= -bound){
-                par.p.y = -bound;
-            }
-            if (par.p.z <= -bound){
-                par.p.z = -bound;
-            }
-            if (par.p.z >= bound){
-                par.p.z = bound;
-            }
+
+
+    /*   TODO:
+     *   for all particles i do
+          update velocity v_i ⇐ (1/∆t)(x*_i − x_i)
+          apply vorticity confinement and XSPH viscosity
+          update position x_i ⇐ x*_i
+        end for
+     */
+
+
+
+
+
+    // stop falling when hits the tank
+    for (Particle &par: particles) {
+        if (par.p.x <= -bound) {
+            par.p.x = -bound;
+        }
+        if (par.p.x >= bound) {
+            par.p.x = bound;
+        }
+        if (par.p.y <= -bound) {
+            par.p.y = -bound;
+        }
+        if (par.p.z <= -bound) {
+            par.p.z = -bound;
+        }
+        if (par.p.z >= bound) {
+            par.p.z = bound;
         }
     }
 
