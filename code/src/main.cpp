@@ -93,7 +93,7 @@ void setPixel(float x, float y, GLfloat r, GLfloat g, GLfloat b) {
 // helper functions
 //***************************************************
 
-void drawCube(float box_length = 2.5f) {
+void drawCube(float box_length = 2.0f) {
     glColor3f(0.0f, 0.0f, 1.0f);
     glBegin(GL_LINES);                // Begin drawing the color cube with 6 quads
 

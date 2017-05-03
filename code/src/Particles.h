@@ -43,6 +43,11 @@ private:
         Vector3D p;
         Vector3D last_p;
         Vector3D v;
+        double lamda;
+        vector<int> neighbor_keys;
+        vector<Particle *> neighbors;
+
+
     };
 
 
@@ -50,7 +55,7 @@ private:
     vector<Particle> particles;
 
     // spatial map
-    unordered_map<float, vector<Particle *> *> map;
+    unordered_map<int, vector<Particle *> *> map;
 
     // gravity
     Vector3D g = Vector3D(0, -9.8, 0); // m per square s
@@ -58,21 +63,34 @@ private:
 
 public:
     // properties
+    double ETA = 0.000001; //relaxing factor
+
     double cube_length;
-    double bound; // (- bound, - bound, - bound) to (bound, bound, bound)
+    double bound; // bounding box - (- bound, - bound, - bound) to (bound, bound, bound)
 
     int N; // number of particles per side
-    double dt;
+
+    double d;
+    double h;
+
     double initial_height;
-    double thickness; // the initial distance between particles
+
+    double rho_0; // initial density
 
     Particles();
     Particles(double cube_length, double bound, int N, double d, double h);
     void render() const;
-    float hash_position(Vector3D pos);
+    int hash_position(Vector3D pos);
     void simulate(double frames_per_sec, double simulation_steps);// simulate one frame
-    void self_collide(Particle &par, double simulation_steps);
+    void find_neighbors(Particle &par);
+    void print_out_self_and_neighbor(Particle *par);
+
+    Vector3D find_min();
+    Vector3D find_max();
+
     void build_spatial_map();
+
+    vector<int> neighbor_hash(Vector3D pos);
 
 };
 
