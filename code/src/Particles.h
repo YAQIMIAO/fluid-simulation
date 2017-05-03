@@ -48,7 +48,6 @@ private:
         vector<int> neighbor_keys;
         vector<Particle *> neighbors;
 
-
     };
 
 

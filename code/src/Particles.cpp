@@ -23,9 +23,9 @@ Particles::Particles()
 {
     this->cube_length = 1.0;
     this->bound = 1.0;
-    this->N = 10;
+    this->N = 5;
     this->initial_height = 10.0;
-    this->d = 0.1;
+    this->d = this->cube_length / float(this->N);
     for(int x=0; x<N; x++)
     {
         for(int y=0; y<N; y++)
@@ -33,9 +33,14 @@ Particles::Particles()
             for(int z=0; z<N; z++)
             {
                 Particle par;
-                par.p = Vector3D((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
-                par.last_p = Vector3D((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
+                // Vector3D pos((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
+                Vector3D pos(-cube_length / 2.f + (x + .5) * this->d, 
+                             this->bound - cube_length + (y + .5) * this->d, 
+                             -cube_length / 2.f + (z + .5) * this->d);
+                par.p = pos;
+                par.last_p = pos;
                 par.v = Vector3D(0, 0, 0);
+                cout<<pos<<endl;
                 particles.push_back(par);
             }
         }
@@ -351,8 +356,8 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
         par.last_p = par.p;
 
         // this is the predicted position
-        par.p = last + v * delta_t;
-        //cout<<par.p<<endl;
+        par.p += v * delta_t;
+        // cout<<par.p<<endl;
     }
 
 
@@ -492,13 +497,15 @@ void Particles::render() const
     glColor3f(0.9, 0.9, 0.9);
     glColorMaterial(GL_FRONT, GL_AMBIENT);
     glColor3f(0.2, 0.5, 0.8);
+
+    float radius = this->d * .5f;
     
     for(const Particle &par : particles)
     {    
         
         glPushMatrix();
         glTranslatef(par.p.x, par.p.y, par.p.z);
-        SolidSphere s = SolidSphere();
+        SolidSphere s = SolidSphere(radius);
         s.draw(par.p.x, par.p.y, par.p.z);
         glPopMatrix();
     }

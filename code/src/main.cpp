@@ -202,7 +202,7 @@ void updateDisplay( GLFWwindow* window ){
         theta += 2*M_PI;
     phi = clip(phi, M_PI/12, M_PI*11/12);
      */
-    testCube.simulate(10, 1);
+    testCube.simulate(30, 1);
     display(window);
     
 }
