@@ -2,48 +2,48 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" buildAllGenerated="true">
     <generated>
-      <config projectName="Fluid" targetName="glfw" />
-      <config projectName="Fluid" targetName="tearing" />
-      <config projectName="Fluid" targetName="icon" />
-      <config projectName="Fluid" targetName="accuracy" />
-      <config projectName="Fluid" targetName="gamma" />
-      <config projectName="Fluid" targetName="Gears" />
-      <config projectName="Fluid" targetName="heightmap" />
-      <config projectName="Fluid" targetName="events" />
-      <config projectName="Fluid" targetName="particles" />
-      <config projectName="Fluid" targetName="fsaa" />
-      <config projectName="Fluid" targetName="splitview" />
+      <config projectName="Fluid" targetName="timeout" />
+      <config projectName="Fluid" targetName="gears" />
       <config projectName="Fluid" targetName="Simple" />
+      <config projectName="Fluid" targetName="sharing" />
       <config projectName="Fluid" targetName="windows" />
+      <config projectName="Fluid" targetName="glew" />
+      <config projectName="Fluid" targetName="Wave" />
+      <config projectName="Fluid" targetName="boing" />
+      <config projectName="Fluid" targetName="defaults" />
+      <config projectName="Fluid" targetName="empty" />
       <config projectName="Fluid" targetName="msaa" />
-      <config projectName="Fluid" targetName="peter" />
+      <config projectName="Fluid" targetName="SplitView" />
+      <config projectName="Fluid" targetName="title" />
+      <config projectName="Fluid" targetName="reopen" />
+      <config projectName="Fluid" targetName="heightmap" />
+      <config projectName="Fluid" targetName="simple" />
+      <config projectName="Fluid" targetName="accuracy" />
+      <config projectName="Fluid" targetName="splitview" />
+      <config projectName="Fluid" targetName="events" />
+      <config projectName="Fluid" targetName="joysticks" />
       <config projectName="Fluid" targetName="Heightmap" />
       <config projectName="Fluid" targetName="glfwinfo" />
+      <config projectName="Fluid" targetName="Gears" />
+      <config projectName="Fluid" targetName="tearing" />
+      <config projectName="Fluid" targetName="uninstall" />
+      <config projectName="Fluid" targetName="icon" />
       <config projectName="Fluid" targetName="Boing" />
-      <config projectName="Fluid" targetName="clipboard" />
-      <config projectName="Fluid" targetName="wave" />
-      <config projectName="Fluid" targetName="Particles" />
-      <config projectName="Fluid" targetName="simple" />
-      <config projectName="Fluid" targetName="cursor" />
-      <config projectName="Fluid" targetName="title" />
-      <config projectName="Fluid" targetName="glew" />
       <config projectName="Fluid" targetName="CGL" />
       <config projectName="Fluid" targetName="threads" />
+      <config projectName="Fluid" targetName="gamma" />
+      <config projectName="Fluid" targetName="Particles" />
       <config projectName="Fluid" targetName="cursoranim" />
-      <config projectName="Fluid" targetName="defaults" />
-      <config projectName="Fluid" targetName="uninstall" />
-      <config projectName="Fluid" targetName="Wave" />
-      <config projectName="Fluid" targetName="gears" />
-      <config projectName="Fluid" targetName="monitors" />
-      <config projectName="Fluid" targetName="sim" />
+      <config projectName="Fluid" targetName="glfw" />
+      <config projectName="Fluid" targetName="particles" />
+      <config projectName="Fluid" targetName="peter" />
+      <config projectName="Fluid" targetName="wave" />
       <config projectName="Fluid" targetName="iconify" />
-      <config projectName="Fluid" targetName="reopen" />
-      <config projectName="Fluid" targetName="joysticks" />
-      <config projectName="Fluid" targetName="timeout" />
-      <config projectName="Fluid" targetName="empty" />
-      <config projectName="Fluid" targetName="SplitView" />
-      <config projectName="Fluid" targetName="sharing" />
-      <config projectName="Fluid" targetName="boing" />
+      <config projectName="Fluid" targetName="fsaa" />
+      <config projectName="Fluid" targetName="sim" />
+      <config projectName="Fluid" targetName="monitors" />
+      <config projectName="Fluid" targetName="cursor" />
+      <config projectName="Fluid" targetName="clipboard" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -70,7 +70,7 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="555">
               <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
               <folding>
                 <element signature="e#244#267#0" expanded="true" />
@@ -83,11 +83,9 @@
       <file leaf-file-name="Particles.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="204" column="35" lean-forward="false" selection-start-line="204" selection-start-column="35" selection-end-line="204" selection-end-column="35" />
-              <folding>
-                <element signature="e#278#300#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="427">
+              <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,11 +93,9 @@
       <file leaf-file-name="Particles.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Particles.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
-              <folding>
-                <element signature="e#316#338#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="495">
+              <caret line="80" column="4" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,8 +123,8 @@
       <file leaf-file-name="SolidSphere.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SolidSphere.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="210">
+              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
               <folding>
                 <element signature="e#150#172#0" expanded="true" />
               </folding>
@@ -151,10 +147,14 @@
       <find>width</find>
       <find>height</find>
       <find>spa</find>
+      <find>lamda</find>
+      <find>rho_0</find>
+      <find>boundary</find>
     </findStrings>
     <replaceStrings>
       <replace>box_length</replace>
       <replace>initial_height</replace>
+      <replace>lambda</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -163,9 +163,9 @@
         <option value="$PROJECT_DIR$/src/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/original_particles/Particles.cpp" />
         <option value="$PROJECT_DIR$/src/Cube.cpp" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/SolidSphere.cpp" />
         <option value="$PROJECT_DIR$/src/Particles.h" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/Particles.cpp" />
       </list>
     </option>
@@ -177,10 +177,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
+    <option name="x" value="180" />
     <option name="y" value="23" />
-    <option name="width" value="1062" />
-    <option name="height" value="777" />
+    <option name="width" value="930" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -632,23 +632,25 @@
       <workItem from="1492993901062" duration="157000" />
       <workItem from="1492994063003" duration="26078000" />
       <workItem from="1493068360002" duration="15934000" />
+      <workItem from="1493925093036" duration="113000" />
+      <workItem from="1493938029976" duration="2840000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44421000" />
+    <option name="totallyTimeSpent" value="47374000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="23" width="1062" height="777" extended-state="0" />
+    <frame x="180" y="23" width="930" height="775" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24879923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2849285" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16058394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16105418" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1781022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -675,6 +677,112 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <folding>
+            <element signature="e#244#267#0" expanded="true" />
+            <element signature="e#599#618#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Particles.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="73" lean-forward="false" selection-start-line="66" selection-start-column="73" selection-end-line="66" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SolidSphere.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding>
+            <element signature="e#150#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <folding>
+            <element signature="e#244#267#0" expanded="true" />
+            <element signature="e#599#618#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Particles.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SolidSphere.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding>
+            <element signature="e#150#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
           <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding>
@@ -688,9 +796,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#278#300#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -698,9 +804,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
           <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="e#316#338#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -785,27 +889,17 @@
     <entry file="file://$PROJECT_DIR$/src/Cube.cpp" />
     <entry file="file://$PROJECT_DIR$/src/SolidSphere.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="210">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding>
             <element signature="e#150#172#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Particles.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
-          <folding>
-            <element signature="e#316#338#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="555">
           <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
           <folding>
             <element signature="e#244#267#0" expanded="true" />
@@ -814,13 +908,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Particles.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="80" column="4" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="204" column="35" lean-forward="false" selection-start-line="204" selection-start-column="35" selection-end-line="204" selection-end-column="35" />
-          <folding>
-            <element signature="e#278#300#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="427">
+          <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -21,11 +21,11 @@
 
 Particles::Particles()
 {
-    this->cube_length = 1.0;
+    this->cube_length = 1.5;
     this->bound = 1.0;
     this->N = cube_length * 10;  // density defined
     this->d = cube_length / float(N);
-    this->initial_height = 2.0;
+    this->initial_height = 1.0;
     this->h = d * 1.5;
     this->hn = ceil(this->bound * 2.f / this->h);
     for(int x=0; x<N; x++)
@@ -184,6 +184,29 @@ void Particles::find_neighbors(Particle &par){
   
 }
 
+
+// particles stop when it gets out of boundary
+void Particles::boundary_check(Particle &par){
+    double epsilon = h/2.0;
+
+    if (par.p.x <= -bound) {
+        par.p.x = -bound + epsilon;
+    }
+    if (par.p.x >= bound) {
+        par.p.x = bound - epsilon;
+    }
+    if (par.p.y <= -bound) {
+        par.p.y = -bound + epsilon;
+    }
+    if (par.p.z <= -bound) {
+        par.p.z = -bound + epsilon;
+    }
+    if (par.p.z >= bound) {
+        par.p.z = bound - epsilon;
+    }
+}
+
+
 double poly_6(double d, double h){
     if (d >= 0 && d <= h){
         return (315.0f / (64.0f * PI * pow(h, 9))) * pow((h * h - d * d), 3);
@@ -193,6 +216,7 @@ double poly_6(double d, double h){
 }
 
 
+// this should not be used actually
 double spiky(double d, double h){
     if (d >= 0 && d <= h){
         return (15.0f / (PI * pow(h, 6))) * pow((h - d), 3);
@@ -232,157 +256,184 @@ double sCorr(double k, double n, double delta_q, double h, double d){
 
 
 void Particles::simulate(double frames_per_sec, double simulation_steps){
-    // before simulate: build the spatial map
-    
+
     double delta_t = 1.0f / frames_per_sec / simulation_steps;
-    
+
+
+    // NOTICE in this step, last_p is the real time p;
+    // par.p is the predicted p
+    // in the paper:
+    // par.last_p is x_i
+    // par.p is x_i*
+
+
     // falling according to gravity
     for (Particle &par: particles){
+        // calculate velocity
         Vector3D v = g * delta_t;
         par.v += v;
-        
-        Vector3D last = par.last_p;
-        par.last_p = par.p;
-        
-        // this is the predicted position
-        par.p += v * delta_t;
-        // cout<<par.p<<endl;
+        // this is the predicted position with only external force
+        par.p = par.last_p + v * delta_t;
     }
-    
-    
-    
+
+    // build spatial map according to the predicted p value
     build_spatial_map();
-    
+
     // find neighbor particles
     for (Particle &par: particles){
         find_neighbors(par);
         //print_out_self_and_neighbor(&par);
     }
-    
-    
-    
+
+
     // Incompressibility
     /*   TODO: currently not working
      *   while iter < solverIterations do
-     for all particles i do
-     calculate λ_i
-     end for
-     for all particles i do
-     calculate ∆p_i
-     perform boundary and response
-     end for
-     for all particles i do
-     update position x*_i ⇐ x*_i + ∆p_i
-     end for
-     end while
+          for all particles i do
+            calculate λ_i
+          end for
+          for all particles i do
+            calculate ∆p_i
+            perform boundary and response
+          end for
+          for all particles i do
+            update position x*_i ⇐ x*_i + ∆p_i
+          end for
+        end while
      */
-    
-    double rho_0 = 300;//poly_6(d, h); // manually determined for now
-    //cout << "rho_i:" << rho_0 << endl;
-    //double h = d * 1.5;
-    
-    
-    for (Particle &par: particles) {
-        // get current particle's density - rho_i
-        double rho_i = 0.0;
-        
-        for (Particle *n: par.neighbors) {
-            rho_i += poly_6((par.p - n->p).norm(), h); // Poly6 kernel
+
+
+    // entering a giant while loop - iterate solverIterations times
+    // may want to make this global
+    int solverIterations = 5;
+    int iter = 0;
+    while (iter < solverIterations){
+
+        // need a rest density
+        // manually determined for now
+        // may need to be global and initiated from constructor in the future
+
+
+        // first for loop - calculate lambda
+        for (Particle &par: particles) {
+
+            // get current particle's density - rho_i
+            double rho_i = 0.0;
+            for (Particle *n: par.neighbors) {
+                rho_i += poly_6((par.p - n->p).norm(), h); // Poly6 kernel
+            }
+
+            // we have rho_i anf rho_0 now we can get the constraint
+            double constraint_i = C_i(rho_i, rho_0);
+            // cout<<constraint_i<<endl;
+
+
+            // sum of gradient^2
+            double sum_gradients = 0.0;
+            // initiate gradient with repect to i
+            Vector3D gradient_for_pi = Vector3D();
+            for (Particle *n: par.neighbors) {
+                // calculate gradient with respect to j
+                Vector3D grad_j = gradient_spiky(par.p, n->p, h) / rho_0;
+
+                // sum add j^2
+                sum_gradients += dot(grad_j, grad_j);
+
+                // accumulate gradient with respect to i
+                gradient_for_pi += grad_j;
+            }
+            // sum add i^2
+            sum_gradients += dot(gradient_for_pi, gradient_for_pi);
+
+            // calculate lambda for par
+            // ETA is a small relaxation parameter, I think it should be rho_0/20.0
+            // if rho_0 is initiated by constructor, ETA should also be initiated after rho_0
+            ETA = rho_0/20.0;
+            par.lambda = (- constraint_i / (sum_gradients + ETA));
         }
-        
-        double constraint_i = C_i(rho_i, rho_0);
-        // cout<<constraint_i<<endl;
-        
-        
-        
-        double sum_gradients = 0.0;
-        
-        Vector3D gradient_for_pi = Vector3D();
-        
-        for (Particle *n: par.neighbors) {
-            Vector3D grad_j = gradient_spiky(par.p, n->p, h);
-            grad_j /= rho_0;
-            
-            sum_gradients += dot(grad_j, grad_j);
-            
-            
-            gradient_for_pi += grad_j;
-            
+
+        // second and third for loop - calculate delta_p and update predicted p
+        for (Particle &par: particles) {
+            // for delta_p, it seems from the paper that it should be an atribute for particle
+            // so although I didn't implement exactly like the paper did,
+            // I still make it an attribute for now;
+            par.delta_p = Vector3D();
+            for (Particle *n: par.neighbors) {
+
+                //adds an artificial pressure
+                double scorr, delta_q, k, exp_n;
+
+                // all this should be manually tuned
+                // make global variables later
+                k = 0.0001;
+                exp_n = 4;
+                delta_q = 0.1 * h;
+                scorr = sCorr(k, exp_n, delta_q, h, (par.p - n->p).norm());
+                par.delta_p += (par.lambda + n->lambda + scorr) * gradient_spiky(par.p, n->p, h);
+            }
+            par.delta_p /= rho_0;
+
+            /*
+             * I originally added this to prevent too much "flying",
+             * not sure if it is useful for now:
+             * calculate delta_p's length, if it seems too bizarre,
+             * just ignore it for now
+             * maybe there should be a better limitation
+             * my current limit makes the water very docile
+             */
+            if (par.delta_p.norm() > h){
+                //par.p += delta_p.unit();
+                //par.p += par.delta_p;
+            }else {
+                par.p += par.delta_p;
+            }
+
+
+            // should there be a particle collision handling here
+            // if so what should it be?
+            // it seems for now the particle don't really clip
+            // so I just ignore this part
+
+
+            // perform boundary check
+            boundary_check(par);
         }
-        
-        //cout << "rho_i:" << rho_i << endl;
-        sum_gradients += dot(gradient_for_pi, gradient_for_pi);
-        
-        
-        par.lamda = (-constraint_i / (sum_gradients + rho_0 / 20.0));
-        
+        iter++;
     }
-    
-    
-    // delta_p
-    for (Particle &par: particles) {
-        Vector3D delta_p = Vector3D();
-        for (Particle *n: par.neighbors) {
-            //adds an artificial pressure
-            double scorr, delta_q, k, exp_n;
-            k = 0.0001;
-            exp_n = 4;
-            delta_q = 0.1 * h;
-            scorr = sCorr(k, exp_n, delta_q, h, (par.p - n->p).norm());
-            delta_p += (par.lamda + n->lamda + scorr) * gradient_spiky(par.p, n->p, h);
-        }
-        delta_p /= rho_0;
-        //cout<<delta_p<<endl;
-        if (delta_p.norm() > h){
-            //par.p += delta_p.unit();
-            //par.p += delta_p;
-            
-        }else {
-            par.p += delta_p;
-        }
-    }
-    
-    
-    
-    
+
+
     /*   TODO:
      *   for all particles i do
-     update velocity v_i ⇐ (1/∆t)(x*_i − x_i)
-     apply vorticity confinement and XSPH viscosity
-     update position x_i ⇐ x*_i
-     end for
+          update velocity v_i ⇐ (1/∆t)(x*_i − x_i)
+          apply vorticity confinement and XSPH viscosity
+          update position x_i ⇐ x*_i
+        end for
      */
-    
-    
-    
-    
-    
-    // stop falling when hits the tank
-    
+
+    // vorticity and XSPH viscosity
     for (Particle &par: particles) {
-        if (par.p.x <= -bound) {
-            par.p.x = -bound + 0.05;
+        par.v = (par.p - par.last_p) / delta_t;
+
+        // apply vorticity
+
+        // first calculate each particle's current vorticity
+        // paper used omega, I'll use w here for simplification
+        Vector3D w = Vector3D();
+        for (Particle *n:par.neighbors){
+            Vector3D v_i = par.v;
+            Vector3D v_j = n->v;
+            Vector3D v_ij = v_j - v_i;
+            Vector3D gradient = gradient_spiky(par.p, n->p, h);
+            w += cross(v_ij, gradient);
         }
-        if (par.p.x >= bound) {
-            par.p.x = bound - 0.05;
-        }
-        if (par.p.y <= -bound) {
-            par.p.y = -bound + 0.05;
-        }
-        if (par.p.z <= -bound) {
-            par.p.z = -bound + 0.05;
-        }
-        if (par.p.z >= bound) {
-            par.p.z = bound - 0.05;
-        }
+
+        // apply viscosity
+
+
+        // update last_p to this new p
+        par.last_p = par.p;
+
     }
-    
-    
-    for (Particle &par: particles) {
-        //par.last_p = par.p;
-        
-    }
-    
 }
 
 
@@ -413,13 +464,13 @@ void Particles::render() const
     glColorMaterial(GL_FRONT, GL_AMBIENT);
     glColor3f(0.2, 0.5, 0.8);
 
-    float radius = this->d * .5f;
     
     for(const Particle &par : particles)
     {    
         glPushMatrix();
-        glTranslatef(par.p.x, par.p.y, par.p.z);
-        SolidSphere s = SolidSphere(radius);
+        // I used last_p to render cos that is the real time position!
+        glTranslatef(par.last_p.x, par.last_p.y, par.last_p.z);
+        SolidSphere s = SolidSphere(render_radius);
         s.draw(par.p.x, par.p.y, par.p.z);
         glPopMatrix();
     }

@@ -44,8 +44,9 @@ private:
     {
         Vector3D p;
         Vector3D last_p;
+        Vector3D delta_p;
         Vector3D v;
-        double lamda;
+        double lambda;
         vector<Particle *> neighbors;
     };
     
@@ -64,7 +65,11 @@ private:
     
 public:
     // properties
-    double ETA = 0.000001; //relaxing factor
+
+    // render radius is how big the particles are
+    double render_radius = 0.03;
+
+    double ETA; //relaxing factor
     
     double cube_length;
     double bound; // bounding box - (- bound, - bound, - bound) to (bound, bound, bound)
@@ -76,7 +81,7 @@ public:
     
     double initial_height;
     
-    double rho_0; // initial density
+    double rho_0 = 300; // initial density
     
     Particles();
     Particles(int N, double height);
@@ -85,13 +90,9 @@ public:
     int hash_position(Vector3D pos);
     void simulate(double frames_per_sec, double simulation_steps);// simulate one frame
     void find_neighbors(Particle &par);
-    void print_out_self_and_neighbor(Particle *par);
-    
-    Vector3D find_min();
-    Vector3D find_max();
-    
     void build_spatial_map();
     int hash_to_key(Vector3D hash);
+    void boundary_check(Particle &par);
 };
 
 #endif /* PARTICLES_H */
