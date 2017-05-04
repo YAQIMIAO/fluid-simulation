@@ -23,9 +23,37 @@ Particles::Particles()
 {
     this->cube_length = 1.0;
     this->bound = 1.0;
-    this->N = 10;
+    this->N = cube_length * 10;  // density defined
     this->d = cube_length / float(N);
     this->initial_height = 2.0;
+    for(int x=0; x<N; x++)
+    {
+        for(int y=0; y<N; y++)
+        {
+            for(int z=0; z<N; z++)
+            {
+                Particle par;
+                // Vector3D pos((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
+                Vector3D pos(-cube_length / 2.f + (x + .5) * this->d, 
+                             this->initial_height + (y + .5) * this->d, 
+                             -cube_length / 2.f + (z + .5) * this->d);
+                par.p = pos;
+                par.last_p = pos;
+                par.v = Vector3D(0, 0, 0);
+                particles.push_back(par);
+            }
+        }
+    }
+
+}
+
+Particles::Particles(int N, double height)
+{
+    this->cube_length = N / 10.f;
+    this->bound = 1.0;
+    this->N = N;  // density defined
+    this->d = cube_length / float(N);
+    this->initial_height = height;
     for(int x=0; x<N; x++)
     {
         for(int y=0; y<N; y++)
@@ -246,7 +274,7 @@ vector<int> Particles::neighbor_hash(Vector3D pos) {
 
 
 void Particles::find_neighbors(Particle &par){
-    par.neighbors = vector<Particle *>();
+    par.neighbors.clear();
     int self_hash = hash_position(par.p);
     
     // 1. is there any close particles in my box that is within h distance away?
@@ -276,7 +304,7 @@ void Particles::find_neighbors(Particle &par){
         }
     }
     
-    //cout<<"how many neighbors? "<<par.neighbors.size()<<endl;
+    // cout<<"how many neighbors? "<<par.neighbors.size()<<endl;
     
     
 }
@@ -343,7 +371,6 @@ double sCorr(double k, double n, double delta_q, double h, double d){
 
 void Particles::simulate(double frames_per_sec, double simulation_steps){
     // before simulate: build the spatial map
-    //build_spatial_map();
     
     double delta_t = 1.0f / frames_per_sec / simulation_steps;
     

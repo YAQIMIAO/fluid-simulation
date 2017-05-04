@@ -33,6 +33,8 @@
 using namespace std;
 using namespace CGL;
 
+#define DENSITY 1000
+
 class Particles {
     
     
@@ -76,6 +78,7 @@ public:
     double rho_0; // initial density
     
     Particles();
+    Particles(int N, double height);
     Particles(double cube_length, double bound, int N, double d, double h);
     void render() const;
     int hash_position(Vector3D pos);
