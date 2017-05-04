@@ -46,7 +46,6 @@ private:
         Vector3D last_p;
         Vector3D v;
         double lamda;
-        vector<int> neighbor_keys;
         vector<Particle *> neighbors;
     };
     
@@ -59,6 +58,8 @@ private:
     
     // gravity
     Vector3D g = Vector3D(0, -9.8, 0); // m per square s
+
+    double hn;
     
     
 public:
@@ -90,9 +91,7 @@ public:
     Vector3D find_max();
     
     void build_spatial_map();
-    
-    vector<int> neighbor_hash(Vector3D pos);
-    
+    int hash_to_key(Vector3D hash);
 };
 
 #endif /* PARTICLES_H */

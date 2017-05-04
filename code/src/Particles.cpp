@@ -26,6 +26,8 @@ Particles::Particles()
     this->N = cube_length * 10;  // density defined
     this->d = cube_length / float(N);
     this->initial_height = 2.0;
+    this->h = d * 1.5;
+    this->hn = ceil(this->bound * 2.f / this->h);
     for(int x=0; x<N; x++)
     {
         for(int y=0; y<N; y++)
@@ -115,15 +117,6 @@ void Particles::build_spatial_map() {
     for (Particle &par: particles){
         //cout<<par.p<<endl;
         int hash_value = hash_position(par.p);
-        //cout<<"hash_value:"<<hash_value<<endl;
-        
-        par.neighbor_keys = neighbor_hash(par.p);
-        par.neighbors = vector<Particle *>();
-        //cout<<par.neighbors.size()<<endl;
-        //cout<<"neighbor_keys.size():"<<par.neighbor_keys.size()<<endl;
-        
-        //cout<<"hash_value:"<<hash_value<<endl;
-        
         if (map[hash_value] != NULL){
             //cout<<"there is already a particle in this box"<<endl;
             map[hash_value]->push_back(&par);
@@ -137,134 +130,22 @@ void Particles::build_spatial_map() {
     
 }
 
+int Particles::hash_to_key(Vector3D hash){
+    int x = (int)floor(hash.x);
+    int y = (int)floor(hash.y);
+    int z = (int)floor(hash.z);
+    //cout<<"hashkey is:"<<"("<<x<<","<<y<<","<<z<<")"<<endl;
 
-Vector3D Particles::find_min(){
-    Vector3D min = Vector3D(999999, 999999, 999999);
-    for (Particle &par: particles) {
-        if (par.p.x < min.x){
-            min.x = par.p.x;
-        }
-        if (par.p.y < min.y){
-            min.y = par.p.y;
-        }
-        if (par.p.z < min.z){
-            min.z = par.p.z;
-        }
-    }
-    return min;
-}
-
-Vector3D Particles::find_max(){
-    Vector3D max = Vector3D(-999999, -999999, -999999);
-    for (Particle &par: particles) {
-        if (par.p.x > max.x){
-            max.x = par.p.x;
-        }
-        if (par.p.y > max.y){
-            max.y = par.p.y;
-        }
-        if (par.p.z > max.z){
-            max.z = par.p.z;
-        }
-    }
-    return max;
-}
-
-int hash_to_key(int x, int y, int z, int N){
-    if (x >= 0 && y >= 0 && z>= 0 && x < N && y < N && z < N){
-        int ret = (x) + (y) * N + (z) * N * N;
-        //cout<<ret<<endl;
-        return ret;
-    }else{
-        return -1;
-        
-    }
+    return x + z * (hn) + y * (hn * hn);
 }
 
 int Particles::hash_position(Vector3D pos) {
-    // h is the bucket length
-    h = d * 1.5;
-    
-    // min is - bound; max is bound
-    // X is how many bucket on each side
-    int X = (2 * bound / h);
-    //cout<<"X:"<<X<<endl;
-    
-    // assign (x, y, z)
-    int x = (int)floor((pos.x + bound)/ h) - 1;
-    int y = (int)floor((pos.y + bound)/ h) - 1;
-    int z = (int)floor((pos.z + bound)/ h) - 1;
-    
-    //cout<<"hashkey is:"<<"("<<x<<","<<y<<","<<z<<")"<<endl;
-    int key = hash_to_key(x, y, z, X);
+
+    Vector3D hash = pos / h;
+    int key = hash_to_key(hash);
     //cout<<"key is:"<<key<<endl;
-    
     return key;
 }
-
-
-
-void push_back_valid_hash(vector<int> *ret, int hash){
-    if (hash >= 0){
-        ret->push_back(hash);
-    }
-}
-
-
-vector<int> Particles::neighbor_hash(Vector3D pos) {
-    vector<int> ret = vector<int>();
-    // min is - bound; max is bound
-    // X is how many bucket on each side
-    int X = (2 * bound / h);
-    //cout<<"X:"<<X<<endl;
-    
-    // assign (x, y, z)
-    int x = (int)floor((pos.x + bound)/ h) - 1;
-    int y = (int)floor((pos.y + bound)/ h) - 1;
-    int z = (int)floor((pos.z + bound)/ h) - 1;
-    
-    
-    //cout<<"("<<x<<", "<<y<<", "<< z<<")"<<endl;
-    int size = X;
-    
-    // 26 neighbors
-    
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y, z, size));
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y, z + 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y - 1, z, size));
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y - 1, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y - 1, z + 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y + 1, z, size));
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y + 1, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x - 1, y + 1, z + 1, size));
-    
-    // ret.push_back(hash_to_key(x, y, z, size));
-    push_back_valid_hash(&ret, hash_to_key(x, y, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x, y, z + 1, size));//
-    push_back_valid_hash(&ret, hash_to_key(x, y - 1, z, size));
-    push_back_valid_hash(&ret, hash_to_key(x, y - 1, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x, y - 1, z + 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x, y + 1, z, size));//
-    push_back_valid_hash(&ret, hash_to_key(x, y + 1, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x, y + 1, z + 1, size));//
-    
-    
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y, z, size));//
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y, z + 1, size));//
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y - 1, z, size));
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y - 1, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y - 1, z + 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y + 1, z, size));//
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y + 1, z - 1, size));
-    push_back_valid_hash(&ret, hash_to_key(x + 1, y + 1, z + 1, size));//
-    //cout<<hash_to_key(x + 1, y + 1, z + 1, size)<<endl;
-    
-    
-    return ret;
-}
-
 
 
 
@@ -275,51 +156,32 @@ vector<int> Particles::neighbor_hash(Vector3D pos) {
 
 void Particles::find_neighbors(Particle &par){
     par.neighbors.clear();
-    int self_hash = hash_position(par.p);
-    
-    // 1. is there any close particles in my box that is within h distance away?
-    if (map[self_hash] != NULL && map[self_hash]->size() > 1) {
-        for (Particle *particle: *(map[self_hash])){
-            if (particle != &par){
-                double diff = (particle->p - par.p).norm();
-                if (diff < h){
-                    //cout<<"found neighbor in self bin"<<endl;
-                    par.neighbors.push_back(particle);
+    Vector3D hash = par.p / h;
+    hash.x = floor(hash.x);
+    hash.y = floor(hash.y);
+    hash.z = floor(hash.z);
+
+    for (int i = -1; i < 2; ++i)
+    {
+        for (int j = -1; j < 2; ++j)
+        {
+            for (int k = -1; k < 2; ++k)
+            {
+                int key = hash_to_key(hash + Vector3D(i, j, k));
+                if (map[key] == NULL)
+                    continue;
+                for (std::vector<Particle *>::iterator iter = map[key]->begin(); iter != map[key]->end(); ++iter) {
+                    if (*iter == &par)
+                        continue;
+                    // test dist, if ((*iter)->p - par.p).norm() < h, add neighbor to the list
+                    if (((*iter)->p - par.p).norm() < h) {
+                        par.neighbors.push_back((*iter));
+                    }
                 }
             }
         }
     }
-    
-    
-    // 2. check at most 26 neighbor bins
-    for (int key: par.neighbor_keys){
-        if (map[key] != NULL) {
-            for (Particle *particle: *(map[key])){
-                double diff = (particle->p - par.p).norm();
-                if (diff < h){
-                    //cout<<"found neighbor in neighbor bins"<<endl;
-                    par.neighbors.push_back(particle);
-                }
-            }
-        }
-    }
-    
-    // cout<<"how many neighbors? "<<par.neighbors.size()<<endl;
-    
-    
-}
-
-
-void Particles::print_out_self_and_neighbor(Particle *par){
-    cout<<"self key is:"<<hash_position(par->p)<<endl;
-    cout<<"self position is:"<<par->p<<endl;
-    cout<<"neighbors num:"<<(par->neighbors).size()<<endl;
-    cout<<"neighbors are:"<<endl;
-    for (Particle *neighbor: par->neighbors){
-        Vector3D pos = neighbor->p;
-        cout<<"position: "<<pos<<endl;
-    }
-    
+  
 }
 
 double poly_6(double d, double h){
