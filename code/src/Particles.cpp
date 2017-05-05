@@ -37,7 +37,7 @@ Particles::Particles()
                 Particle par;
                 // Vector3D pos((x+0.5-N*0.5)*d, (y+initial_height+0.5)*d-1.0, (z+0.5-N*0.5)*d);
                 Vector3D pos(-cube_length / 2.f + (x + .5) * this->d, 
-                             this->initial_height + (y + .5) * this->d, 
+                             -cube_length + this->initial_height + (y + .5) * this->d, 
                              -cube_length / 2.f + (z + .5) * this->d);
                 par.p = pos;
                 par.last_p = pos;
@@ -74,7 +74,6 @@ Particles::Particles(int N, double height)
             }
         }
     }
-    //build_spatial_map();
 }
 
 Particles::Particles(double cube_length, double bound, int N, double dist, double h) {
@@ -97,7 +96,6 @@ Particles::Particles(double cube_length, double bound, int N, double dist, doubl
             }
         }
     }
-    //build_spatial_map();
     
 }
 
@@ -120,6 +118,13 @@ void Particles::build_spatial_map() {
         if (map[hash_value] != NULL){
             //cout<<"there is already a particle in this box"<<endl;
             map[hash_value]->push_back(&par);
+            // if (map[hash_value]->size() > 1000) {
+            //     cout << map[hash_value]->size() << endl;
+            //     for (int i = 0; i < 3; ++i)
+            //     {
+            //         cout << map[hash_value]->at(i)->p << endl;
+            //     }
+            // }
         }else{
             //cout<<"there is no particle in this box"<<endl;
             std::vector<Particle *> * vec = new std::vector<Particle *>();
@@ -127,7 +132,6 @@ void Particles::build_spatial_map() {
             map[hash_value] = vec;
         }
     }
-    
 }
 
 int Particles::hash_to_key(Vector3D hash){
@@ -365,7 +369,7 @@ double sCorr(double k, double n, double delta_q, double h, double d){
 void Particles::simulate(double frames_per_sec, double simulation_steps){
     //double h = d;
 
-    double delta_t = 1.5f / frames_per_sec / simulation_steps;
+    double delta_t = 1.f / frames_per_sec / simulation_steps;
 
     while (simulation_steps > 0.0) {
         //render();
@@ -415,7 +419,6 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
 
         // entering a giant while loop - iterate solverIterations times
         // may want to make this global
-        int solverIterations = 20;
         int iter = 0;
         while (iter < solverIterations) {
 
@@ -455,15 +458,12 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                 sum_gradients += dot(gradient_for_pi, gradient_for_pi);
 
                 // calculate lambda for par
-                // ETA is a small relaxation parameter, I think it should be rho_0/20.0
-                // if rho_0 is initiated by constructor, ETA should also be initiated after rho_0
-                ETA = rho_0 / 10.0;
                 par.lambda = (-constraint_i / (sum_gradients + ETA));
             }
 
             // second and third for loop - calculate delta_p and update predicted p
             for (Particle &par: particles) {
-                // for delta_p, it seems from the paper that it should be an atribute for particle
+                // for delta_p, it seems from the paper that it should be an attribute for particle
                 // so although I didn't implement exactly like the paper did,
                 // I still make it an attribute for now;
 
@@ -473,14 +473,7 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                 for (Particle *n: par.neighbors) {
 
                     //adds an artificial pressure
-                    double scorr, delta_q, k, exp_n;
-
-                    // all this should be manually tuned
-                    // make global variables later
-                    k = 0.0001;
-                    exp_n = 4;
-                    delta_q = 0.1 * h;
-                    scorr = sCorr(k, exp_n, delta_q, h, (par.p - n->p).norm());
+                    double scorr = sCorr(k, exp_n, delta_q * h, h, (par.p - n->p).norm());
                     par.delta_p += (par.lambda + n->lambda + scorr) * gradient_spiky(par.p, n->p, h);
                 }
                 par.delta_p /= rho_0;
@@ -610,7 +603,6 @@ void Particles::render() const
     glColorMaterial(GL_FRONT, GL_AMBIENT);
     glColor3f(0.2, 0.5, 0.8);
 
-    
     for(const Particle &par : particles)
     {    
         glPushMatrix();
