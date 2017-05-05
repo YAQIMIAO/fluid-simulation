@@ -81,7 +81,7 @@ public:
     
     double initial_height;
     
-    double rho_0 = 300; // initial density
+    double rho_0 = 150; // initial density
     
     Particles();
     Particles(int N, double height);
@@ -92,6 +92,7 @@ public:
     void find_neighbors(Particle &par);
     void build_spatial_map();
     int hash_to_key(Vector3D hash);
+    void collision_handling(Particle &par);
     void boundary_check(Particle &par);
 };
 
