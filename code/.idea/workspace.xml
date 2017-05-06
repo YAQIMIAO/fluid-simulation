@@ -83,8 +83,8 @@
       <file leaf-file-name="Particles.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="210">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,8 +174,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="163" />
+    <option name="x" value="19" />
+    <option name="y" value="329" />
     <option name="width" value="1191" />
     <option name="height" value="686" />
   </component>
@@ -631,15 +631,15 @@
       <workItem from="1493068360002" duration="15934000" />
       <workItem from="1493925093036" duration="113000" />
       <workItem from="1493938029976" duration="2840000" />
-      <workItem from="1493956052328" duration="23371000" />
+      <workItem from="1493956052328" duration="23479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70745000" />
+    <option name="totallyTimeSpent" value="70853000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="163" width="1191" height="686" extended-state="0" />
+    <frame x="19" y="329" width="1191" height="686" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22136752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -969,8 +969,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="210">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
