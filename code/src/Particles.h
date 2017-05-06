@@ -87,9 +87,9 @@ public:
 
     double k = 0.0001;
     double exp_n = 4;
-    double delta_q = 0.1;
+    double delta_q = 0.01;
 
-    Vector3D gradient_eta = Vector3D(0.001, 0.001, 0.001);
+    //Vector3D gradient_eta = Vector3D(0.001, 0.001, 0.001);
 
     int solverIterations = 10;
 
