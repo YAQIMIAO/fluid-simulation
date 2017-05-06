@@ -67,12 +67,16 @@ The paper did not specify this part. So we added several method to ensure this p
 
 2. Particles collisions: Initially we thought about simulating the dynamics of fluid by using particles as solid sphere and calculate the enternal and external forces. Later we realize that this method is not very good at efficiency and hard when debugging and real-time simulation. Seeing that, we chose to another way which is position based dynamics fluid simulation, with the help of the paper of Miles Macklin and Matthias Müller.
 
-3. 
+3. Computation precisions: Since we are dealing with a lot of gradients, a little error could result in terrible rendering accidents, such as particles gradually rise up and enventually flies a way in a whirl, massive particles disappeared because of a single computation overflow and particle positions becoming nan, and the fluid gradually slide to one side of the box.
 
+4. Empirical terms: Some parameters, such as k, n, and $\Delta q$, needs to be manually tweaked. Some values doesn't seems to bring much difference if changed. Some values works better than the result we calculated on the paper.
 
 
 ### A description of lessons learned.
 
+1. Position based dynamics is a great framework for simulating incompressible flow. It's quite efficient while looking realistic.
+
+2. There are lots of parameters and empirical values used in this program. It's best to use global variables and avoid magic numbers as that way will be easier for tuning. Theoretically perfect value doesn't always works better than other values - it takes time to experiment with different settings to find the best setup.
 
 
 ## Results
@@ -80,14 +84,21 @@ The paper did not specify this part. So we added several method to ensure this p
 Your final images, animations, video of your system (whichever is relevant). You can include results that you think show off what you built but that you did not have time to go over on presentation day.
 
 1. Final images:
+
 ![alt text](images/1.png)
+
 ![alt text](images/2.png)
+
 ![alt text](images/3.png)
+
 ![alt text](images/4.png)
+
 ![alt text](images/5.png)
 
 2. Final video:
+
 ![alt text](images/final.gif)
+
 ![alt text](images/final2.gif)
 
 
@@ -117,4 +128,5 @@ Your final images, animations, video of your system (whichever is relevant). You
 
 ## Contributions from each team member:
 Yimin He: Implemented fluid simulation logic, rendering method and main setup. 
+
 Yaqi Miao: An alternative UI with camera view (not used), implemented Particle initialization, spatial hashing, finding neighbors, debugging and tuning the rendering parameters; milestone report, video, and slides.
