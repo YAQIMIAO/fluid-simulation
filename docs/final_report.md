@@ -21,41 +21,52 @@ We closely followed the simulation loop provided in the paper (Position Based Fl
 ![alt text](images/main.png)
 
 1. Apply external force and predict particle positions
+
 The only force in the beginning of our simulation is gravity. So we apply gravity to each particle and get a predicted position for each of them.
 
 2. Build spatial map and find neighbor particles
+
 This is similar to what we did in project 4.
 
 3. Calculate current density and how much position we can change to maintain current density
+
 To calculate current density, we loop over each particle and find their neighbor, then repeatedly apply a kernel function which takes in this particle and its neighbor, and the cutoff distance we want to maintain, and sum the result.
 
 Density calculation:
+
 ![alt text](images/equations/2.png)
 
 We used poly6 kernel fot density calculation:
+
 ![alt text](images/equations/poly6.png)
 
 Once we get density of each particle, we can apply a constraint on them:
+
 ![alt text](images/equations/1.png)
 
 Afterwards, our goal is to maintain this density. So we used the gradient of spikey kernel to calculate how much position we are allow to change in each simulation step.
 
 
 The eqaution of the gradient of spiky kernel:
+
 ![alt text](images/equations/gradient_spiky.png)
 
 To calculate Lambda and delta_p:
+
 ![alt text](images/equations/3.png)
 ![alt text](images/equations/4.png)
 
 Then we apply an artificial force to make it less clumpy, and add together:
+
 ![alt text](images/equations/5.png)
 ![alt text](images/equations/6.png)
 
 4. Perform collision detection and boundary check
+
 The paper did not specify this part. So we added several method to ensure this part. Specifically, the particles should maintain the cutoff distance when they get closer and they should not run out of the water tank.
 
 5. Apply vorticity and XSPH viscosity, then update position.
+
 ![alt text](images/equations/7.png)
 ![alt text](images/equations/8.png)
 ![alt text](images/equations/9.png)
