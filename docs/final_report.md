@@ -15,8 +15,6 @@ In this project, we build a fluid simulation program using Position Based Fluids
 
 ## Technical approach
 
-### A 1-2 page summary of your technical approach, techniques used, algorithms implemented, etc. (use references to papers or other resources for further detail). Highlight how your approach varied from the references used (did you implement a subset, or did you change or enhance anything), the unique decisions you made and why.
-
 ### summary
 
 We closely followed the simulation loop provided in the paper (Position Based Fluids, by Miles Macklin and Matthias Mu ̈ller).
