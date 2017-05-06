@@ -372,7 +372,6 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
     double delta_t = 1.f / frames_per_sec / simulation_steps;
 
     while (simulation_steps > 0.0) {
-        //render();
 
         // NOTICE in this step, last_p is the real time p;
         // par.p is the predicted p
@@ -422,10 +421,6 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
         int iter = 0;
         while (iter < solverIterations) {
 
-            // need a rest density
-            // manually determined for now
-            // may need to be global and initiated from constructor in the future
-
             // first for loop - calculate lambda
             for (Particle &par: particles) {
 
@@ -434,6 +429,7 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                 for (Particle *n: par.neighbors) {
                     rho_i += poly_6((par.p - n->p).norm(), h); // Poly6 kernel
                 }
+                //cout << rho_i<<endl;
 
                 // we have rho_i and rho_0 now we can get the constraint
                 double constraint_i = C_i(rho_i, rho_0);
@@ -485,7 +481,6 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                  * calculate delta_p's length, if it seems too bizarre,
                  * just ignore it for now
                  * maybe there should be a better limitation
-                 * my current limit makes the water very docile
                  */
 
 
@@ -496,13 +491,7 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                     par.p += par.delta_p;
                 }
 
-
-
-                // should there be a particle collision handling here
-                // if so what should it be?
-                // it seems for now the particle don't really clip
-                // so I just ignore this part
-                //boundary_check(par);
+                // a particle collision handling here
                 collision_handling(par);
 
 
@@ -524,9 +513,8 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
 
         // vorticity and XSPH viscosity
         for (Particle &par: particles) {
-
-
             par.v = (par.p - par.last_p) / delta_t;
+            //cout<<"par.v:"<<par.v<<endl;
 
             // apply vorticity
 
@@ -538,17 +526,21 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                 Vector3D v_j = n->v;
                 Vector3D v_ij = v_j - v_i;
                 Vector3D gradient = gradient_spiky(par.p, n->p, h);
-                w += cross(v_ij, gradient);
+                if (gradient.x !=0.0 && gradient.y != 0.0 && gradient.z!=0.0){
+                    w += cross(v_ij, gradient);
+                }
+                //w += cross(v_ij, gradient);
             }
+            if (w.x !=0.0 && w.y != 0.0 && w.z!=0.0){
+                Vector3D eta = gradient_w(w);
+                Vector3D N_vector = eta.unit();
 
-            Vector3D eta = gradient_w(w);
-            Vector3D N_vector = eta.unit();
-
-            // since mass is 1, a = f/m, a = f
-            double epsilon = 0.01;
-            Vector3D a = epsilon * (cross(N_vector, w));
-            par.v += a * delta_t;
-
+                // since mass is 1, a = f/m, a = f
+                double epsilon = 0.1;
+                Vector3D a = epsilon * (cross(N_vector, w));
+                par.v += a * delta_t;
+                //cout<<"par.v:"<<par.v<<endl;
+            }
 
             // apply viscosity
             Vector3D v_sum = Vector3D();
@@ -556,12 +548,12 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                 Vector3D v_i = par.v;
                 Vector3D v_j = n->v;
                 Vector3D v_ij = v_j - v_i;
-                double w = poly_6((par.p - n->p).norm(), h);
-                v_sum += v_ij * w;
+                double big_w = poly_6((par.p - n->p).norm(), h);
+                v_sum += v_ij * big_w;
             }
 
 
-            double c = 0.01;
+            double c = 0.1;
             par.v += c * v_sum;
 
 

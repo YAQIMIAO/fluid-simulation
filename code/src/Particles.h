@@ -80,7 +80,7 @@ public:
     
     double initial_height;
     
-    double rho_0 = 350; // initial density
+    double rho_0 = 60; // initial density
 
     // ETA is a small relaxation parameter, I think it should be rho_0/20.0. I think it should be constant
     double ETA = 10; //relaxing factor
@@ -89,7 +89,9 @@ public:
     double exp_n = 4;
     double delta_q = 0.1;
 
-    int solverIterations = 20;
+    Vector3D gradient_eta = Vector3D(0.001, 0.001, 0.001);
+
+    int solverIterations = 10;
 
     
     Particles();
