@@ -10,12 +10,17 @@ Yaqi Miao
 
 ## Abstract
 
-In this project, we built a fluid simulation program using Position Based Fluids method. 
+In this project, we build a fluid simulation program using Position Based Fluids method. We firstly apply newton’s laws on particles, then correct to require incompressibility of fluid (requiring constant density of particles), then correct the constant density with an additional repulsive (tensile) term between particles (because the constant density term tends to produce clumps of particles). Finally, the using particles apparently leads to energy loss - the particles just settle down too quickly, so we use a vorticity calculation as a heuristic to add new energy into the system (base the amount of new force at that location on that location’s vorticity, which apparently makes sense for fluids), and in the end we attempt to include a viscosity term to introduce some clumpiness to the velocities, so that the fluid appears to move more like a whole and not like separate bouncing particles.
 
 
 ## Technical approach
 
 ### A 1-2 page summary of your technical approach, techniques used, algorithms implemented, etc. (use references to papers or other resources for further detail). Highlight how your approach varied from the references used (did you implement a subset, or did you change or enhance anything), the unique decisions you made and why.
+
+summary
+
+
+
 
 ### A description of problems encountered and how you tackled them.
 
@@ -33,7 +38,6 @@ Your final images, animations, video of your system (whichever is relevant). You
 ![alt text](images/3.png)
 ![alt text](images/4.png)
 ![alt text](images/5.png)
-![alt text](images/6.png)
 
 2. Final video:
 

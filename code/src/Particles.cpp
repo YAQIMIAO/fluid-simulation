@@ -429,7 +429,7 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                 for (Particle *n: par.neighbors) {
                     rho_i += poly_6((par.p - n->p).norm(), h); // Poly6 kernel
                 }
-                //cout << rho_i<<endl;
+                // cout << rho_i<<endl;
 
                 // we have rho_i and rho_0 now we can get the constraint
                 double constraint_i = C_i(rho_i, rho_0);
