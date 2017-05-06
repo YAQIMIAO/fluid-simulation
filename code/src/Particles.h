@@ -81,7 +81,7 @@ public:
     
     double initial_height;
     
-    double rho_0 = 150; // initial density
+    double rho_0 = 350; // initial density
     
     Particles();
     Particles(int N, double height);
