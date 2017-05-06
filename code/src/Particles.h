@@ -69,7 +69,6 @@ public:
     // render radius is how big the particles are
     double render_radius = 0.03;
 
-    double ETA; //relaxing factor
     
     double cube_length;
     double bound; // bounding box - (- bound, - bound, - bound) to (bound, bound, bound)
@@ -82,6 +81,16 @@ public:
     double initial_height;
     
     double rho_0 = 350; // initial density
+
+    // ETA is a small relaxation parameter, I think it should be rho_0/20.0. I think it should be constant
+    double ETA = 10; //relaxing factor
+
+    double k = 0.0001;
+    double exp_n = 4;
+    double delta_q = 0.1;
+
+    int solverIterations = 20;
+
     
     Particles();
     Particles(int N, double height);

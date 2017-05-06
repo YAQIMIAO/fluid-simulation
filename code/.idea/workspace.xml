@@ -80,21 +80,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Particles.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Particles.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="482" column="30" lean-forward="false" selection-start-line="482" selection-start-column="30" selection-end-line="482" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="308">
+              <caret line="474" column="49" lean-forward="false" selection-start-line="474" selection-start-column="49" selection-end-line="474" selection-end-column="49" />
+              <folding>
+                <marker date="1494033967000" expanded="true" signature="17353:17713" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Particles.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Particles.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Particles.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="80" column="4" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+            <state relative-caret-position="173">
+              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,8 +158,8 @@
         <option value="$PROJECT_DIR$/src/Cube.cpp" />
         <option value="$PROJECT_DIR$/src/SolidSphere.cpp" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/src/Particles.h" />
         <option value="$PROJECT_DIR$/src/Particles.cpp" />
+        <option value="$PROJECT_DIR$/src/Particles.h" />
       </list>
     </option>
   </component>
@@ -625,12 +627,12 @@
       <workItem from="1493068360002" duration="15934000" />
       <workItem from="1493925093036" duration="113000" />
       <workItem from="1493938029976" duration="2840000" />
-      <workItem from="1493956052328" duration="14890000" />
+      <workItem from="1493956052328" duration="14964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62264000" />
+    <option name="totallyTimeSpent" value="62338000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="70" y="23" width="1058" height="775" extended-state="0" />
@@ -682,7 +684,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1494033967000" expanded="true" signature="17353:17713" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -735,7 +739,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1494033967000" expanded="true" signature="17353:17713" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -788,7 +794,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1494033967000" expanded="true" signature="17353:17713" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -841,7 +849,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1494033967000" expanded="true" signature="17353:17713" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -953,18 +963,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Particles.h">
+    <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="80" column="4" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="308">
+          <caret line="474" column="49" lean-forward="false" selection-start-line="474" selection-start-column="49" selection-end-line="474" selection-end-column="49" />
+          <folding>
+            <marker date="1494033967000" expanded="true" signature="17353:17713" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Particles.cpp">
+    <entry file="file://$PROJECT_DIR$/src/Particles.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="482" column="30" lean-forward="false" selection-start-line="482" selection-start-column="30" selection-end-line="482" selection-end-column="30" />
+        <state relative-caret-position="173">
+          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
         </state>
       </provider>
