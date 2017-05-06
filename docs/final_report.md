@@ -1,4 +1,4 @@
-	
+
 # Final Report
 
 ## Team Members
@@ -40,7 +40,8 @@ Your final images, animations, video of your system (whichever is relevant). You
 ![alt text](images/5.png)
 
 2. Final video:
-
+![alt text](images/final.gif)
+![alt text](images/final2.gif)
 
 
 
