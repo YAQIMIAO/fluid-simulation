@@ -17,7 +17,8 @@ In this project, we build a fluid simulation program using Position Based Fluids
 
 ### summary
 
-We closely followed the simulation loop provided in the paper (Position Based Fluids, by Miles Macklin and Matthias Mu ̈ller).
+We closely followed the simulation loop provided in the paper (Position Based Fluids, by Miles Macklin and Matthias Müller).
+
 ![alt text](images/main.png)
 
 1. Apply external force and predict particle positions
@@ -83,7 +84,7 @@ The paper did not specify this part. So we added several method to ensure this p
 4. Empirical terms: Some parameters, such as k, n, and $\Delta q$, needs to be manually tweaked. Some values doesn't seems to bring much difference if changed. Some values works better than the result we calculated on the paper.
 
 
-### A description of lessons learned.
+### Lessons learned
 
 1. Position based dynamics is a great framework for simulating incompressible flow. It's quite efficient while looking realistic.
 
