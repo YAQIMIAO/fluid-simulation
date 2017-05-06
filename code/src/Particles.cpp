@@ -321,20 +321,10 @@ double poly_6(double d, double h){
 }
 
 
-// this should not be used actually
-double spiky(double d, double h){
-    if (d >= 0 && d <= h){
-        return (15.0f / (PI * pow(h, 6))) * pow((h - d), 3);
-    }else{
-        return 0.0;
-    }
-    
-    
-}
 
 Vector3D gradient_w(Vector3D x){
 
-    return (1.0/x.norm())* x;
+    return x.unit();
 
 }
 
@@ -346,8 +336,8 @@ Vector3D gradient_spiky(Vector3D pi, Vector3D pj, double h){
         return Vector3D();
     }
     
-    double constant = (45.0f/(PI * pow(h, 6))) * (h - dr) * (h - dr) / dr;
-    return r * constant * (-1.0);
+    double constant = -(45.0f/(PI * pow(h, 6))) * (h - dr) * (h - dr);
+    return r.unit() * constant;
     
 }
 
@@ -445,13 +435,13 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
                     Vector3D grad_j = gradient_spiky(par.p, n->p, h) / rho_0;
 
                     // sum add j^2
-                    sum_gradients += dot(grad_j, grad_j);
+                    sum_gradients += grad_j.norm2();
 
                     // accumulate gradient with respect to i
                     gradient_for_pi += grad_j;
                 }
                 // sum add i^2
-                sum_gradients += dot(gradient_for_pi, gradient_for_pi);
+                sum_gradients += gradient_for_pi.norm2();
 
                 // calculate lambda for par
                 par.lambda = (-constraint_i / (sum_gradients + ETA));
@@ -485,7 +475,7 @@ void Particles::simulate(double frames_per_sec, double simulation_steps){
 
 
                 if (par.delta_p.norm() > this->h * 2.0) {
-                    //par.p += delta_p.unit();
+                    par.p += par.delta_p.unit() * this->h * 2.0;
                     //par.p += par.delta_p;
                 } else {
                     par.p += par.delta_p;

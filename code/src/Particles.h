@@ -80,10 +80,10 @@ public:
     
     double initial_height;
     
-    double rho_0 = 60; // initial density
+    double rho_0 = 100; // initial density
 
     // ETA is a small relaxation parameter, I think it should be rho_0/20.0. I think it should be constant
-    double ETA = 10; //relaxing factor
+    double ETA = 3; //relaxing factor
 
     double k = 0.0001;
     double exp_n = 4;

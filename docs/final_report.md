@@ -65,3 +65,4 @@ Your final images, animations, video of your system (whichever is relevant). You
 
 ## Contributions from each team member:
 Yimin He: Implemented fluid simulation logic, rendering method and main setup. 
+Yaqi Miao: An alternative UI with camera view (not used), implemented Particle initialization, spatial hashing, finding neighbors, debugging and tuning the rendering parameters; milestone report, video, and slides.
