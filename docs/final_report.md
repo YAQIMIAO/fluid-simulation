@@ -22,7 +22,15 @@ summary
 
 
 
-### A description of problems encountered and how you tackled them.
+### Problems encountered
+
+1. Integrating GUI from previous projects: We kind of wanted to have a nice GUI like we did in the previous projects, but there were convoluted relationship between imported head files and unfamiliar libraries, so we decided to put it later if we have time.
+
+2. Particles collisions: Initially we thought about simulating the dynamics of fluid by using particles as solid sphere and calculate the enternal and external forces. Later we realize that this method is not very good at efficiency and hard when debugging and real-time simulation. Seeing that, we chose to another way which is position based dynamics fluid simulation, with the help of the paper of Miles Macklin and Matthias Müller.
+
+3. 
+
+
 
 ### A description of lessons learned.
 
