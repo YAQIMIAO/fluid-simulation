@@ -6,9 +6,9 @@
 
 //include header file for glfw library so that we can use OpenGL
 #ifdef __APPLE__
-    #include <OpenGL/glu.h>
+#include <OpenGL/gl.h>
 #else
-    #include <GL/gl.h>
+#include <GL/gl.h>
 #endif
 
 #include <GLFW/glfw3.h>

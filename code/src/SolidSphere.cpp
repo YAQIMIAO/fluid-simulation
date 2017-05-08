@@ -1,8 +1,12 @@
 // class SolidSphere Code from:
 // http://stackoverflow.com/questions/5988686/creating-a-3d-sphere-in-opengl-using-visual-c
 #define _USE_MATH_DEFINES
+#ifdef __APPLE__
 #include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
+#else
+#include <GL/gl.h>
+#endif
+
 #include <vector>
 #include <cmath>
 #include "CGL/CGL.h"
