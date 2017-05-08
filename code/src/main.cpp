@@ -5,8 +5,13 @@
 
 
 //include header file for glfw library so that we can use OpenGL
+#ifdef __APPLE__
+    #include <OpenGL/glu.h>
+#else
+    #include <GL/gl.h>
+#endif
+
 #include <GLFW/glfw3.h>
-#include <OpenGL/glu.h>
 #include <time.h>
 #include <math.h>
 #include <cstring>
